@@ -1,0 +1,37 @@
+#make file for ASM library
+
+#The following variables are assumed to be in the local environment:
+#
+#     SIO_BASE      - The Subdirectory for this project's C source
+#     SIO_INC_PATH  - The Subdirectory for this project's includes
+#     CL_ENV_OPTS   - Environment options for the compiler (optional)
+#
+
+SRC_PATH=$(SIO_BASE)\ASM        # path to sources for this make
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\ASM.LIB
+
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+#
+#assembler flags
+#
+
+ASM_FLAGS=/DSMALLMODEL  /DCOM1SIO /DCOM2SIO /DCOM3SIO /DCOM4SIO /Ml
+#ASM_FLAGS=/DLARGEMODEL  /DCOM1SIO /DCOM2SIO /DCOM3SIO /DCOM4SIO /Ml
+
+MASM=MASM $(*B),.\objs\$(*B),$(*B).lst, $(ASM_FLAGS);
+
+
+$(OBJ_PATH)\CPGSC.OBJ: CPGSC.ASM CPGSC.MAC COM1ISR.ASM COM2ISR.ASM COM3ISR.ASM COM4ISR.ASM
+                $(MASM)
+                $(NLIB)
+

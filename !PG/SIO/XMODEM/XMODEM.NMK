@@ -1,0 +1,138 @@
+#make file for XMODEM library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+
+#
+
+SRC_PATH=$(SIO_BASE)\xmodem        # path to sources
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\XMODEM.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |   No Stack Probes
+#            |    |   |  Structure Packing
+#            |    |   |   |  Compile only
+#            |    |   |   |  |  Suppress Copyright
+#            |    |   |   |  |  |
+#            |    |   |   |  |  |
+CL_LOC_OPTS=/qc /Od /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+$(LIBNAME): $(OBJ_PATH)\X_MSG.OBJ \
+     $(OBJ_PATH)\X_RCV.OBJ \
+     $(OBJ_PATH)\X_RCVCRC.OBJ \
+     $(OBJ_PATH)\X_SNDCRC.OBJ \
+     $(OBJ_PATH)\X_SND.OBJ \
+     $(OBJ_PATH)\X_SNDCHK.OBJ \
+     $(OBJ_PATH)\X_RCVCHK.OBJ \
+     $(OBJ_PATH)\X_GLOBAL.OBJ \
+     $(OBJ_PATH)\X_MAKPKT.OBJ \
+     $(OBJ_PATH)\X_CVINST.OBJ \
+     $(OBJ_PATH)\X_EXCEPT.OBJ
+
+$(OBJ_PATH)\X_MSG.OBJ:  $(SRC_PATH)\X_MSG.C
+      $(compile)
+      $(NLIB)
+
+$(OBJ_PATH)\X_RCV.OBJ:     $(SRC_PATH)\X_RCV.C      \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\ascii.h \
+   $(SIO_INC_PATH)\xmod.h \
+   $(SIO_INC_PATH)\crc.h \
+   $(SIO_INC_PATH)\buos.h \
+   $(SIO_INC_PATH)\misc.h \
+   $(SIO_INC_PATH)\level0.h
+      $(compile)
+      $(NLIB)
+
+$(OBJ_PATH)\X_RCVCRC.OBJ:  $(SRC_PATH)\X_RCVCRC.C  \
+        $(SIO_INC_PATH)\crc.h \
+        $(SIO_INC_PATH)\siodef.h \
+        $(SIO_INC_PATH)\siolocal.h \
+        $(SIO_INC_PATH)\xmod.h
+          $(compile)
+         $(NLIB)
+
+$(OBJ_PATH)\X_SNDCRC.OBJ:  $(SRC_PATH)\X_SNDCRC.C \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\xmod.h \
+   $(SIO_INC_PATH)\crc.h
+      $(compile)
+      $(NLIB)
+
+$(OBJ_PATH)\X_SND.OBJ:  $(SRC_PATH)\X_SND.C  \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\ascii.h \
+   $(SIO_INC_PATH)\xmod.h \
+   $(SIO_INC_PATH)\misc.h \
+   $(SIO_INC_PATH)\level0.h \
+   $(SIO_INC_PATH)\buos.h \
+   $(SIO_INC_PATH)\crc.h
+       $(compile)
+       $(NLIB)
+
+$(OBJ_PATH)\X_SNDCHK.OBJ:   $(SRC_PATH)\X_SNDCHK.C \
+        $(SIO_INC_PATH)\siolocal.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\X_RCVCHK.OBJ:   $(SRC_PATH)\X_RCVCHK.C \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\xmod.h
+       $(compile)
+       $(NLIB)
+
+$(OBJ_PATH)\X_GLOBAL.OBJ:   $(SRC_PATH)\X_GLOBAL.C \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h
+	$(compile)
+        $(NLIB)
+
+$(OBJ_PATH)\X_MAKPKT.OBJ:   $(SRC_PATH)\X_MAKPKT.C  \
+   $(SIO_INC_PATH)\ascii.h \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\xmod.h
+       $(compile)
+       $(NLIB)
+
+$(OBJ_PATH)\X_CVINST.OBJ:   $(SRC_PATH)\X_CVINST.C  \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\xmod.h
+       $(compile)
+       $(NLIB)
+
+$(OBJ_PATH)\X_EXCEPT.OBJ: X_EXCEPT.C \
+   $(INCLUDE)\ctype.h \
+   $(SIO_INC_PATH)\siolocal.h \
+   $(SIO_INC_PATH)\siodef.h \
+   $(SIO_INC_PATH)\misc.h \
+   $(SIO_INC_PATH)\ascii.h \
+   $(SIO_INC_PATH)\xmod.h \
+   $(SIO_INC_PATH)\level0.h \
+   $(SIO_INC_PATH)\buos.h
+       $(compile)
+       $(NLIB)
+

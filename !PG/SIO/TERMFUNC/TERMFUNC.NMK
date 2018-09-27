@@ -1,0 +1,101 @@
+#make file for TERMFUNC library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+#
+SRC_PATH=$(SIO_BASE)\TERMFUNC        # path to sources for this make
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\TERMFUNC.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |   No Stack Probes
+#            |    |   |  Structure Packing
+#            |    |   |   |  Compile only
+#            |    |   |   |  |  Suppress Copyright
+#            |    |   |   |  |  |
+#            |    |   |   |  |  |
+CL_LOC_OPTS=/qc /Od  /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+$(LIBNAME):  $(OBJ_PATH)\CBUFF.OBJ \
+     $(OBJ_PATH)\DIAL_RE.OBJ \
+     $(OBJ_PATH)\DNLOAD.OBJ \
+     $(OBJ_PATH)\LOCBUFF.OBJ \
+     $(OBJ_PATH)\SETUP232.OBJ \
+     $(OBJ_PATH)\SETFMT.OBJ \
+     $(OBJ_PATH)\UPLOAD.OBJ
+
+$(OBJ_PATH)\CBUFF.OBJ:  $(SRC_PATH)\CBUFF.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(SIO_INC_PATH)\buos.h \
+     $(SIO_INC_PATH)\key.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\DIAL_RE.OBJ: $(SRC_PATH)\DIAL_RE.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\DNLOAD.OBJ:  $(SRC_PATH)\DNLOAD.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(SIO_INC_PATH)\buos.h \
+     $(SIO_INC_PATH)\misc.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\LOCBUFF.OBJ: $(SRC_PATH)\LOCBUFF.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(SIO_INC_PATH)\buos.h \
+     $(SIO_INC_PATH)\misc.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\SETUP232.OBJ: $(SRC_PATH)\SETUP232.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\misc.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\SETFMT.OBJ: $(SRC_PATH)\SETFMT.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\misc.h
+                $(compile)
+                $(NLIB)
+
+
+$(OBJ_PATH)\UPLOAD.OBJ:   $(SRC_PATH)\UPLOAD.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(SIO_INC_PATH)\misc.h \
+     $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+

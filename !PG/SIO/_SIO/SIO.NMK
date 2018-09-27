@@ -1,0 +1,279 @@
+#make file for SIO library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+#
+SRC_PATH=$(SIO_BASE)\_SIO        # path to sources for this make
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\SIO.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |   No Stack Probes
+#            |    |   |  Structure Packing
+#            |    |   |   |  Compile only
+#            |    |   |   |  |  Suppress Copyright
+#            |    |   |   |  |  |
+#            |    |   |   |  |  |
+CL_LOC_OPTS=/qc /Od  /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+$(LIBNAME):      $(OBJ_PATH)\S_OPEN.OBJ \
+     $(OBJ_PATH)\ASC_PARM.OBJ \
+     $(OBJ_PATH)\CLEARERR.OBJ \
+     $(OBJ_PATH)\ER_STRS.OBJ \
+     $(OBJ_PATH)\GET232.OBJ \
+     $(OBJ_PATH)\GETBAUD.OBJ \
+     $(OBJ_PATH)\GETFMAT.OBJ \
+     $(OBJ_PATH)\SET232.OBJ \
+     $(OBJ_PATH)\SETBAUD.OBJ \
+     $(OBJ_PATH)\SETFMAT.OBJ \
+     $(OBJ_PATH)\STAT232.OBJ \
+     $(OBJ_PATH)\STATSERR.OBJ \
+     $(OBJ_PATH)\S_CLOSE.OBJ \
+     $(OBJ_PATH)\S_CLRSIO.OBJ \
+     $(OBJ_PATH)\S_FGETLN.OBJ \
+     $(OBJ_PATH)\S_FGETS.OBJ \
+     $(OBJ_PATH)\S_FPUTS.OBJ \
+     $(OBJ_PATH)\S_ICNTRL.OBJ \
+     $(OBJ_PATH)\S_IPHPOP.OBJ \
+     $(OBJ_PATH)\S_KBORT.OBJ \
+     $(OBJ_PATH)\S_OCNTRL.OBJ \
+     $(OBJ_PATH)\S_PSHPOP.OBJ \
+     $(OBJ_PATH)\S_PUTS.OBJ \
+     $(OBJ_PATH)\TR_RCVON.OBJ \
+     $(OBJ_PATH)\TX_WRITE.OBJ \
+     $(OBJ_PATH)\TX_IWRIT.OBJ \
+     $(OBJ_PATH)\S_WRITE.OBJ \
+     $(OBJ_PATH)\BR2BCODE.OBJ 
+
+
+
+
+
+
+$(OBJ_PATH)\ASC_PARM.OBJ: $(SRC_PATH)\ASC_PARM.C
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\CLEARERR.OBJ: $(SRC_PATH)\CLEARERR.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h  
+                  $(compile)
+                  $(NLIB)
+
+$(OBJ_PATH)\ER_STRS.OBJ:  $(SRC_PATH)\ER_STRS.C
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\GET232.OBJ:  $(SRC_PATH)\GET232.C \
+             $(SIO_INC_PATH)\siolocal.h \
+             $(SIO_INC_PATH)\siodef.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\GETBAUD.OBJ: $(SRC_PATH)\GETBAUD.C \
+             $(SIO_INC_PATH)\siolocal.h \
+             $(SIO_INC_PATH)\siodef.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\GETFMAT.OBJ: $(SRC_PATH)\GETFMAT.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h
+                  $(compile)
+                  $(NLIB)
+
+$(OBJ_PATH)\SET232.OBJ:  $(SRC_PATH)\SET232.C \
+             $(SIO_INC_PATH)\siolocal.h \
+             $(SIO_INC_PATH)\siodef.h \
+             $(SIO_INC_PATH)\buos.h \
+             $(SIO_INC_PATH)\level0.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\SETBAUD.OBJ:  $(SRC_PATH)\SETBAUD.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\SETFMAT.OBJ: $(SRC_PATH)\SETFMAT.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h  \
+              $(SIO_INC_PATH)\buos.h
+                  $(compile)
+                  $(NLIB)
+
+$(OBJ_PATH)\STAT232.OBJ:  $(SRC_PATH)\STAT232.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\STATSERR.OBJ: $(SRC_PATH)\STATSERR.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h
+                  $(compile)
+                  $(NLIB)
+
+$(OBJ_PATH)\S_CLOSE.OBJ: $(SRC_PATH)\S_CLOSE.C \
+             $(SIO_INC_PATH)\siolocal.h \
+             $(SIO_INC_PATH)\siodef.h \
+             $(SIO_INC_PATH)\buos.h \
+             $(SIO_INC_PATH)\uart.h \
+             $(SIO_INC_PATH)\level0.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_CLRSIO.OBJ: $(SRC_PATH)\S_CLRSIO.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\level0.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_FGETLN.OBJ: $(SRC_PATH)\S_FGETLN.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\sioctl.h \
+              $(SIO_INC_PATH)\buos.h \
+              $(SIO_INC_PATH)\ascii.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_FGETS.OBJ:  $(SRC_PATH)\S_FGETS.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\sioctl.h \
+              $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_FPUTS.OBJ:  $(SRC_PATH)\S_FPUTS.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_ICNTRL.OBJ: $(SRC_PATH)\S_ICNTRL.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\sioctl.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_IPHPOP.OBJ: $(SRC_PATH)\S_IPHPOP.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\sioctl.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_KBORT.OBJ:  $(SRC_PATH)\S_KBORT.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\key.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_OCNTRL.OBJ: $(SRC_PATH)\S_OCNTRL.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\sioctl.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_OPEN.OBJ:   $(SRC_PATH)\S_OPEN.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\buos.h \
+              $(SIO_INC_PATH)\uart.h \
+              $(SIO_INC_PATH)\level0.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_PSHPOP.OBJ: $(SRC_PATH)\S_PSHPOP.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\sioctl.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_PUTS.OBJ:   $(SRC_PATH)\S_PUTS.C  \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\TR_RCVON.OBJ: $(SRC_PATH)\TR_RCVON.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+#$(OBJ_PATH)\TX_ICLOS.OBJ: $(SRC_PATH)\TX_ICLOS.C    \
+#     $(SIO_INC_PATH)\siolocal.h \
+#     $(SIO_INC_PATH)\siodef.h   \
+#     $(SIO_INC_PATH)\buos.h   \
+#     $(SIO_INC_PATH)\u16x50.h  
+#                $(compile)
+#                $(NLIB)
+
+#$(OBJ_PATH)\TX_IOPEN.OBJ: $(SRC_PATH)\TX_IOPEN.C    \
+#     $(SIO_INC_PATH)\siolocal.h \
+#     $(SIO_INC_PATH)\siodef.h   \
+#     $(SIO_INC_PATH)\buos.h   \
+#     $(SIO_INC_PATH)\uart.h
+#                $(compile)
+#                $(NLIB)
+
+$(OBJ_PATH)\TX_WRITE.OBJ: $(SRC_PATH)\TX_WRITE.C    \
+     $(SIO_INC_PATH)\siodef.h   \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\TX_IWRIT.OBJ: $(SRC_PATH)\TX_IWRIT.C    \
+     $(SIO_INC_PATH)\siodef.h   \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\u16x50.h 
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_WRITE.OBJ: $(SRC_PATH)\S_WRITE.C    \
+     $(SIO_INC_PATH)\siodef.h   \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\BR2BCODE.OBJ: $(SRC_PATH)\BR2BCODE.C    \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+
+
+

@@ -1,0 +1,97 @@
+#make file for CRC library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger 
+#
+SRC_PATH=$(SIO_BASE)\CRC        # path to sources for this make
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\CRC.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+
+# FOR MSOFT C6 & 7                                              
+#           Fast Compile                                        
+#            |   Optimization                                   
+#            |    |  No Stack Probes                        
+#            |    |  |  Structure Packing                   
+#            |    |  |   |  Compile only                    
+#            |    |  |   |  |  Suppress Copyright           
+#            |    |  |   |  |  |                            
+#            |    |  |   |  |  |                            
+CL_LOC_OPTS=/qc /Od /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+CRC.EXE:  $(LIBNAME)
+
+$(LIBNAME): $(OBJ_PATH)\CRCREVRS.OBJ \
+     $(OBJ_PATH)\CRCRUPD.OBJ \
+     $(OBJ_PATH)\CRC16TAB.OBJ \
+     $(OBJ_PATH)\CRCHWARE.OBJ \
+     $(OBJ_PATH)\MKCRCTBL.OBJ \
+     $(OBJ_PATH)\CRCTAB.OBJ \
+     $(OBJ_PATH)\CRCUPDAT.OBJ \
+     $(OBJ_PATH)\POLYDIV.OBJ \
+     $(OBJ_PATH)\CRC.OBJ
+
+$(OBJ_PATH)\CRCREVRS.OBJ:  $(SRC_PATH)\CRCREVRS.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\CRCRUPD.OBJ:  $(SRC_PATH)\CRCRUPD.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\CRC16TAB.OBJ:  $(SRC_PATH)\CRC16TAB.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\CRCHWARE.OBJ:  $(SRC_PATH)\CRCHWARE.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\MKCRCTBL.OBJ:  $(SRC_PATH)\MKCRCTBL.C
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\CRCTAB.OBJ:    $(SRC_PATH)\CRCTAB.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+
+$(OBJ_PATH)\CRCUPDAT.OBJ:  $(SRC_PATH)\CRCUPDAT.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+
+$(OBJ_PATH)\POLYDIV.OBJ:  $(SRC_PATH)\POLYDIV.C \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\CRC.OBJ:   $(SRC_PATH)\CRC.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\CRC.h
+                $(compile)
+                $(NLIB)
+
+CRC.EXE:  $(LIBNAME)
+          link $(OBJ_PATH)\crc,crc,,$(LIBNAME);
+

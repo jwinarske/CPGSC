@@ -1,0 +1,59 @@
+#make file for progs
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+#
+SRC_PATH=$(SIO_BASE)\PROGS       # path to sources for this make
+
+
+#
+#linker flags
+#
+
+LFLAGS= /NOE /NOI /CO
+
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |   No Stack Probes
+#            |    |   |  Structure Packing
+#            |    |   |   |  Compile only
+#            |    |   |   |  |  Suppress Copyright
+#            |    |   |   |  |  |
+#            |    |   |   |  |  |
+CL_LOC_OPTS=/qc /Od  /Gs /Zp /c /nologo
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+
+TERM7.EXE: TERM7.OBJ
+
+TERM7.OBJ: $(SRC_PATH)\TERM7.C \
+              $(SIO_INC_PATH)\siolocal.h \
+              $(SIO_INC_PATH)\siodef.h \
+              $(SIO_INC_PATH)\ascii.h \
+              $(SIO_INC_PATH)\sioctl.h \
+              $(SIO_INC_PATH)\buos.h \
+              $(SIO_INC_PATH)\key.h \
+              $(SIO_INC_PATH)\term.h \
+              $(SIO_INC_PATH)\xmod.h \
+              $(SIO_INC_PATH)\modem.h
+               $(compile)
+
+TERM7.EXE: TERM7.OBJ                \
+           $(SIO_BASE)\BUOS\buos.lib \
+           $(SIO_BASE)\ASM\asm.lib \
+           $(SIO_BASE)\CRC\crc.lib \
+           $(SIO_BASE)\IBMPC\ibmpc.lib \
+           $(SIO_BASE)\MISC\misc.lib \
+           $(SIO_BASE)\MODEM\modem.lib \
+           $(SIO_BASE)\TERMFUNC\termfunc.lib \
+           $(SIO_BASE)\XMODEM\xmodem.lib \
+           $(SIO_BASE)\U16x50\u16x50.lib \
+           $(SIO_BASE)\_SIO\sio.lib
+              link @term7.rsp
+

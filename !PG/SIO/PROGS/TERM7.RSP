@@ -1,0 +1,16 @@
+\!pg\sio\progs\TERM7  /NOE /NOI /CO /SE:256
+,,,
+\!pg\sio\asm\asm.lib +
+\!pg\sio\BUOS\buos.lib +
+\!pg\sio\CRC\crc.lib +
+\!pg\sio\MISC\misc.lib +
+\!pg\sio\MODEM\modem.lib +
+\!pg\sio\TERMFUNC\termfunc.lib +
+\!pg\sio\XMODEM\xmodem.lib +
+\!pg\sio\U16x50\u16x50.lib +
+\!pg\sio\_sio\sio.lib +
+\!pg\sio\IBMPC\ibmpc.lib;
+
+
+
+

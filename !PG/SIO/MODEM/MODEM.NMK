@@ -1,0 +1,223 @@
+#make file for MODEM library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+#
+SRC_PATH=$(SIO_BASE)\MODEM        # path to sources for this make
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\MODEM.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |  No Stack Probes
+#            |    |  |  Structure Packing
+#            |    |  |   |  Compile only
+#            |    |  |   |  |  Suppress Copyright
+#            |    |  |   |  |  |
+#            |    |  |   |  |  |
+CL_LOC_OPTS=/qc /Od /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+$(LIBNAME): $(OBJ_PATH)\M_UNCFIG.OBJ \
+     $(OBJ_PATH)\M_ECHO.OBJ \
+     $(OBJ_PATH)\M_ISMSG.OBJ \
+     $(OBJ_PATH)\M_PRSMSG.OBJ \
+     $(OBJ_PATH)\M_GETSTR.OBJ \
+     $(OBJ_PATH)\M_CMDSTR.OBJ \
+     $(OBJ_PATH)\M_GOCMD.OBJ \
+     $(OBJ_PATH)\M_HUP.OBJ \
+     $(OBJ_PATH)\M_WHORU.OBJ \
+     $(OBJ_PATH)\M_WT4DCD.OBJ \
+     $(OBJ_PATH)\M_DIAL.OBJ \
+     $(OBJ_PATH)\M_RESET.OBJ \
+     $(OBJ_PATH)\M_CMD.OBJ \
+     $(OBJ_PATH)\M_CMD_OK.OBJ \
+     $(OBJ_PATH)\M_ANSWER.OBJ \
+     $(OBJ_PATH)\M_CODES.OBJ \
+     $(OBJ_PATH)\M_CONFIG.OBJ \
+     $(OBJ_PATH)\M_REDIAL.OBJ \
+     $(OBJ_PATH)\M_PROCFG.OBJ \
+     $(OBJ_PATH)\M_WRNDCD.OBJ
+
+$(OBJ_PATH)\M_UNCFIG.OBJ:  $(SRC_PATH)\M_UNCFIG.C  \
+     $(SIO_INC_PATH)\modem.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\M_ECHO.OBJ:  $(SRC_PATH)\M_ECHO.C  \
+     $(SIO_INC_PATH)\modem.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\M_ISMSG.OBJ:  $(SRC_PATH)\M_ISMSG.C  \
+     $(INCLUDE)\string.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\modem.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\M_PRSMSG.OBJ: $(SRC_PATH)\M_PRSMSG.C  \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\misc.h \
+     $(SIO_INC_PATH)\level0.h \
+     $(SIO_INC_PATH)\ascii.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_GETSTR.OBJ: $(SRC_PATH)\M_GETSTR.C   \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h \
+     $(SIO_INC_PATH)\sioctl.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_CMDSTR.OBJ: $(SRC_PATH)\M_CMDSTR.C   \
+     $(INCLUDE)\string.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_GOCMD.OBJ: $(SRC_PATH)\M_GOCMD.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(SIO_INC_PATH)\buos.h \
+     $(SIO_INC_PATH)\level0.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_HUP.OBJ: $(SRC_PATH)\M_HUP.C \
+     $(SIO_INC_PATH)\level0.h \
+     $(SIO_INC_PATH)\modem.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_WHORU.OBJ:   $(SRC_PATH)\M_WHORU.C \
+     $(INCLUDE)\string.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_WT4DCD.OBJ:  $(SRC_PATH)\M_WT4DCD.C \
+     $(INCLUDE)\string.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_DIAL.OBJ: $(SRC_PATH)\M_DIAL.C \
+     $(INCLUDE)\string.h \
+     $(INCLUDE)\ctype.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\buos.h \
+     $(SIO_INC_PATH)\ascii.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_RESET.OBJ: $(SRC_PATH)\M_RESET.C  \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\misc.h \
+     $(SIO_INC_PATH)\level0.h \
+     $(SIO_INC_PATH)\ascii.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_CMD.OBJ: $(SRC_PATH)\M_CMD.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h \
+     $(SIO_INC_PATH)\sioctl.h \
+     $(INCLUDE)\string.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_CMD_OK.OBJ:    $(SRC_PATH)\M_CMD_OK.C   \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_ANSWER.OBJ:  $(SRC_PATH)\M_ANSWER.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\buos.h \
+     $(SIO_INC_PATH)\level0.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_CODES.OBJ:   $(SRC_PATH)\M_CODES.C
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\M_CONFIG.OBJ:  $(SRC_PATH)\M_CONFIG.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(INCLUDE)\string.h \
+     $(SIO_INC_PATH)\modem.h \
+     $(SIO_INC_PATH)\sioctl.h
+              $(compile)
+              $(NLIB)
+
+
+$(OBJ_PATH)\M_PROCFG.OBJ:  $(SRC_PATH)\M_PROCFG.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(INCLUDE)\string.h \
+     $(SIO_INC_PATH)\modem.h \
+     $(SIO_INC_PATH)\sioctl.h
+              $(compile)
+              $(NLIB)
+
+
+$(OBJ_PATH)\M_REDIAL.OBJ:  $(SRC_PATH)\M_REDIAL.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h
+              $(compile)
+              $(NLIB)
+
+$(OBJ_PATH)\M_WRNDCD.OBJ:  $(SRC_PATH)\M_WRNDCD.C \
+     $(INCLUDE)\ctype.h \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\modem.h \
+     $(SIO_INC_PATH)\misc.h
+              $(compile)
+              $(NLIB)
+
+

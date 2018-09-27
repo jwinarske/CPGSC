@@ -1,0 +1,159 @@
+#make file for ?? library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+#
+SRC_PATH=$(SIO_BASE)\U16x50        # path to sources
+OBJ_PATH=.\OBJS
+
+#
+#linker flags
+#
+
+LFLAGS= /NOE /NOI /CO
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\U16x50.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |  No Stack Probes
+#            |    |  |  Structure Packing
+#            |    |  |   |  Compile only
+#            |    |  |   |  |  Suppress Copyright
+#            |    |  |   |  |  |
+#            |    |  |   |  |  |
+CL_LOC_OPTS=/qc /Od /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+$(LIBNAME): \
+     $(OBJ_PATH)\U_INTMGR.OBJ \
+     $(OBJ_PATH)\ISR_SERR.OBJ \
+     $(OBJ_PATH)\ISR_232.OBJ \
+     $(OBJ_PATH)\ISR_RCV.OBJ \
+#     $(OBJ_PATH)\ISR_XRCV.OBJ \
+     $(OBJ_PATH)\ISR_TX.OBJ \
+     $(OBJ_PATH)\I_DUMMY.OBJ \
+     $(OBJ_PATH)\S_CONFIG.OBJ \
+     $(OBJ_PATH)\S_IADMIN.OBJ \
+     $(OBJ_PATH)\S_RESTOR.OBJ \
+     $(OBJ_PATH)\S_REVECT.OBJ \
+     $(OBJ_PATH)\UVSET232.OBJ \
+     $(OBJ_PATH)\UVSETBR.OBJ \
+     $(OBJ_PATH)\UVSTAT32.OBJ \
+     $(OBJ_PATH)\UVSTBITS.OBJ
+
+$(OBJ_PATH)\U_INTMGR.OBJ: $(SRC_PATH)\U_INTMGR.C    \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h \
+     $(SIO_INC_PATH)\level0.h
+            $(compile)
+            $(NLIB)
+
+$(OBJ_PATH)\I_DUMMY.OBJ: $(SRC_PATH)\I_DUMMY.C  \
+    $(SIO_INC_PATH)\siodef.h \
+    $(SIO_INC_PATH)\u16x50.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\ISR_SERR.OBJ: $(SRC_PATH)\ISR_SERR.C  \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h
+            $(compile)
+            $(NLIB)
+
+$(OBJ_PATH)\ISR_232.OBJ: $(SRC_PATH)\ISR_232.C  \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h
+            $(compile)
+            $(NLIB)
+
+$(OBJ_PATH)\ISR_RCV.OBJ:   $(SRC_PATH)\ISR_RCV.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\buos.h
+            $(compile)
+            $(NLIB)
+
+#$(OBJ_PATH)\ISR_XRCV.OBJ:   $(SRC_PATH)\ISR_XRCV.C \
+#     $(SIO_INC_PATH)\siolocal.h \
+#     $(SIO_INC_PATH)\siodef.h \
+#     $(SIO_INC_PATH)\buos.h
+#            $(compile)
+#            $(NLIB)
+
+$(OBJ_PATH)\ISR_TX.OBJ: $(SRC_PATH)\ISR_TX.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_CONFIG.OBJ: $(SRC_PATH)\S_CONFIG.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h
+            $(compile)
+            $(NLIB)
+
+$(OBJ_PATH)\S_IADMIN.OBJ: $(SRC_PATH)\S_IADMIN.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h \
+     $(SIO_INC_PATH)\buos.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_RESTOR.OBJ: $(SRC_PATH)\S_RESTOR.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\S_REVECT.OBJ: $(SRC_PATH)\S_REVECT.C    \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\siolocal.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\UVSET232.OBJ: $(SRC_PATH)\UVSET232.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\UVSETBR.OBJ:  $(SRC_PATH)\UVSETBR.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h \
+     $(SIO_INC_PATH)\u16x50.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\UVSTAT32.OBJ: $(SRC_PATH)\UVSTAT32.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\UVSTBITS.OBJ: $(SRC_PATH)\UVSTBITS.C    \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\siodef.h
+                $(compile)
+                $(NLIB)
+

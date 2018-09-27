@@ -1,2 +1,0 @@
-nmake asm.nmk
-

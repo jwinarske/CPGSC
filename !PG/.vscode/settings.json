@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "siodef.h": "c",
+        "siolocal.h": "c",
+        "key.h": "c",
+        "uart.h": "c"
+    }
+}

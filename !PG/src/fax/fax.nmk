@@ -1,0 +1,169 @@
+#make file for FAX library
+
+#The following variables are assumed to be in the local environment:
+#
+#    SIO_BASE      - The Subdirectory for this project's C source
+#    SIO_INC_PATH  - The Subdirectory for this project's includes
+#    CL            - Model (AX), Warning Level, debugger
+#
+SRC_PATH=$(SIO_BASE)\FAX        # path to sources for this make
+OBJ_PATH=.\OBJS
+
+#
+#library flags
+#
+
+LIB_FLAGS=/NOLOGO
+LIB_ARGS=-+
+LIBCMD=lib
+LIBNAME=.\FAX.LIB
+NLIB=$(LIBCMD) $(LIB_FLAGS)  $(LIBNAME) $(LIB_ARGS) $(OBJ_PATH)\$(*B).obj;
+
+# FOR MSOFT C6 & 7
+#           Fast Compile
+#            |   Optimization
+#            |    |   No Stack Probes
+#            |    |   |  Structure Packing
+#            |    |   |   |  Compile only
+#            |    |   |   |  |  Suppress Copyright
+#            |    |   |   |  |  |
+#            |    |   |   |  |  |
+CL_LOC_OPTS=/qc /Od  /Gs /Zp /c /nologo /Fo$(OBJ_PATH)\$(*B).obj
+
+compile=cl $(CL_LOC_OPTS) $(CL_ENV_OPTS) $(SRC_PATH)\$(*B).c
+
+DUMMY : MAKEBMP.EXE BMAP2RUN.EXE RUN2T4.EXE T4TORUN.EXE RUN2BMP.EXE
+
+$(LIBNAME):    $(OBJ_PATH)\T4ENCTBL.OBJ \
+               $(OBJ_PATH)\BITS2RUN.OBJ \
+               $(OBJ_PATH)\RUN2BITS.OBJ  \
+               $(OBJ_PATH)\RUN2T4.OBJ   \
+               $(OBJ_PATH)\T4ENCODE.OBJ \
+               $(OBJ_PATH)\T4DECODE.OBJ \
+               $(OBJ_PATH)\T4_TREES.OBJ
+
+#
+#DECODE T4 TO BITMAP
+#
+
+# compile obj
+
+
+$(OBJ_PATH)\T4DECODE.OBJ:  $(SRC_PATH)\T4DECODE.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\T4_TREES.OBJ:  $(SRC_PATH)\T4_TREES.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+                $(NLIB)
+
+$(OBJ_PATH)\T4TORUN.OBJ:  $(SRC_PATH)\T4TORUN.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+
+
+T4TORUN.EXE:  $(LIBNAME)\
+               $(OBJ_PATH)\T4TORUN.OBJ
+                link $(OBJ_PATH)\T4TORUN,,NUL,$(LIBNAME);
+
+
+#
+#MAKE BITMAP
+#
+
+#compile exe main
+$(OBJ_PATH)\MAKEBMP.OBJ:  $(SRC_PATH)\MAKEBMP.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+
+#link
+MAKEBMP.EXE:  $(LIBNAME)\
+               $(OBJ_PATH)\MAKEBMP.OBJ
+                link $(OBJ_PATH)\MAKEBMP,,NUL,$(LIBNAME);
+
+
+
+#
+# RUNLENGTH TO T4 DEPENDENCIES
+#
+
+#compile obj
+$(OBJ_PATH)\T4ENCODE.OBJ:  $(SRC_PATH)\T4ENCODE.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+             $(compile)
+             $(NLIB)
+
+#compile exe
+
+$(OBJ_PATH)\RUN2T4.OBJ:  $(SRC_PATH)\RUN2T4.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+
+#link exe
+
+RUN2T4.EXE:  $(LIBNAME)             \
+             $(OBJ_PATH)\RUN2T4.OBJ
+             link $(OBJ_PATH)\RUN2T4,,NUL,$(LIBNAME);
+
+
+#
+#BITMAP TO RUNLENGTH DEPENDENCIES
+#
+
+
+#compile exe main
+$(OBJ_PATH)\BMAP2RUN.OBJ:  $(SRC_PATH)\BMAP2RUN.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+
+# compile obj
+$(OBJ_PATH)\BITS2RUN.OBJ:  $(SRC_PATH)\BITS2RUN.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+                $(NLIB)
+
+BMAP2RUN.EXE:  $(LIBNAME)\
+               $(OBJ_PATH)\BMAP2RUN.OBJ
+                link $(OBJ_PATH)\BMAP2RUN,,NUL,$(LIBNAME);
+
+#
+# RUNLENGTH TO T.4 CODE DEPENDENCIES
+#
+
+$(OBJ_PATH)\T4ENCTBL.OBJ:  $(SRC_PATH)\T4ENCTBL.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+                $(NLIB)
+
+#
+#RUNLENGTH TO BITMAP DEPENDENCIES
+#
+
+
+#compile exe main
+$(OBJ_PATH)\RUN2BMP.OBJ:  $(SRC_PATH)\RUN2BMP.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+
+# compile obj
+$(OBJ_PATH)\RUN2BITS.OBJ:  $(SRC_PATH)\RUN2BITS.C \
+     $(SIO_INC_PATH)\siolocal.h \
+     $(SIO_INC_PATH)\t4.h
+                $(compile)
+                $(NLIB)
+
+RUN2BMP.EXE:  $(LIBNAME)\
+               $(OBJ_PATH)\RUN2BMP.OBJ
+                link $(OBJ_PATH)\RUN2BMP,,NUL,$(LIBNAME);

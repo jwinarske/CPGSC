@@ -1,3 +1,0 @@
-nmake ibmpc.nmk
-
-

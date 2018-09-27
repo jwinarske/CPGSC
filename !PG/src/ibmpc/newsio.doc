@@ -1,0 +1,17 @@
+
+                Automating Changes in the SIO Initialization
+
+Since I have chosen to keep the initialization for each COM port in
+a separate file, modifications to the SIO definition require
+modifying four files: COM1SIO.C, COM2SIO.C, COM1SIO.C, and COM3SIO.C.
+I automated this time-consuming and error-prone process:
+
+1. Perform all your modifications to COM3SIO.C until you get IBMPC.C (which
+   includes it) to compile.
+
+2. Run the MAKESIO batch file.  This makes three copies of COM3SIO, one 
+   for each SIO, then replaces the variable names with those appropriate
+   for that SIO.  For example, the baudC becomes baudA, baudB, etc.
+
+3. After running the batch file, all SIOs are functionally identical. This
+   is obviously not desirable if you wish to initialize them differently.

@@ -14,13 +14,20 @@ project(sio LANGUAGES C)
 #################################
 set(CMAKE_C_STANDARD 99)
 
+add_definitions(
+    -Dnear=
+    -Dfar=
+    -Dnear=
+    -Dfar=
+)
+
 if(NOT MSVC)
     add_definitions(
-        -Dnear=
-        -Dfar=
         -D_interrrupt=
         -DINTPTR=
         -DNO_EOL_OUTPUT
+        -D_disable=
+        -D_enable=
     )
 
     #set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS} -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections ")
@@ -29,10 +36,6 @@ if(NOT MSVC)
 else()
 
     add_definitions(
-        /D_enable=
-        /D_disable=
-        /Dnear=
-        /Dfar=
         #/DCOM1SIO
     )
 

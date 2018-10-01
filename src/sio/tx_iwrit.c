@@ -12,7 +12,7 @@ FUNCTION NAME: tx_iwrite
 #include <stdio.h>               /*//*/
 #include <sio/siodef.h>          /*//*/
 #include <sio/misc.h>               /*//*/
-#include <sio/U16x50.H>          /* isr_tx prototype */
+#include <sio/u16x50.h>          /* isr_tx prototype */
 #include <memory.h>              /* memcpy prototype */
 #include <sio/level0.h>         
 

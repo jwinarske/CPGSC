@@ -54,8 +54,8 @@ int cbuff(SIO *siop, FILE *rcvfp)
                if (c != TIMEOUT)             /* sender didn't respond        */
                     puts("\nRemote ignored flow-off request.\a");
                error = fflush(rcvfp) != 0;
-               s_icntrl(siop, T_OUTFLAG, OFF); /* restore zero wait on input */
-               if (s_icntrl(siop, GET, CONSFLAG) == OFF)
+               s_icntrl(siop, T_OUTFLAG, OFF, 0); /* restore zero wait on input */
+               if (s_icntrl(siop, GET, CONSFLAG, 0) == OFF)
                     printf("%lu total uint8_ts written.\r", bytetot);
                buffcnt = 0;
                flowon(siop);                    /* release sender stuck         */

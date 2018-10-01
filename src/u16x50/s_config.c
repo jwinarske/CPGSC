@@ -10,7 +10,7 @@ FUNCTION NAME:  s_config
 */
 
 #include <sio/siodef.h>
-#include <sio/U16x50.H>
+#include <sio/u16x50.h>
 
 /* copy physical UART regs into virtual regs */
 void s_config(SIO *siop)

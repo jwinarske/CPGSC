@@ -5,16 +5,16 @@
 #include <stdbool.h>
 #ifdef __GNUC__
 #include <libio.h>
+#include <stddef.h>
 #endif
 
 #undef   NUL
 #undef   NIL
 #undef   EOF
 #undef   TRUE
-//#undef   uint8_t
 #undef   DOS_EOF
 
-#define  NIL      		NULL //TODO (void*) 0      /* pointer constant               */
+#define  NIL      		NULL           /* pointer constant               */
 #define  NUL      		'\0'           /* ASCII  constant                */
 #define  EVER     		;;             /* used in "for (EVER)"           */
 #define  FALSE    		0

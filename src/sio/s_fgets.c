@@ -23,8 +23,8 @@ int s_fgets(SIO *siop, char *buff, int numc)
      int c;
 
 //     s_icntrl(siop, SET, T_OUTFLAG, ON);    /* turn on input timeout         */
-//     if (s_icntrl(siop, GET, T_OUT) == 0)   /* save timeout interval         */
-//          s_icntrl(siop, SET, T_OUT, 9);    /* make sure there is some delay */
+//     if (s_icntrl(siop, GET, T_OUT, NULL) == 0)   /* save timeout interval         */
+//          s_icntrl(siop, SET, T_OUT, 9, NULL);    /* make sure there is some delay */
      count = 0;
      while (count < numc)
           {

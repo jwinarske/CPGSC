@@ -12,11 +12,11 @@ FUNCTION NAME: locbuff
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <sio\siodef.h>
-#include <sio\sioctl.h>
-#include <sio\buos.h>
-#include <sio\misc.h>
-#include <sio\key.h>
+#include <sio/siodef.h>
+#include <sio/sioctl.h>
+#include <sio/buos.h>
+#include <sio/misc.h>
+#include <sio/key.h>
 
 #define BYTESLEFT      25
 #define HEADROOM        5                   /* blocks to save for locals    */
@@ -38,7 +38,7 @@ int locbuff(SIO *siop, FILE *rcvfp)
           }
      s_ipush(siop);
      bufflen = numblks * BLKSIZE;       /* now convert from blocks to bytes  */
-     pausep = (char *)(buff + (bufflen - BYTESLEFT)); /* flow-off point */
+     pausep = (uint8_t *)(buff + (bufflen - BYTESLEFT)); /* flow-off point */
      printf("%lu byte local buffer in use.\n",bufflen);
      for (EVER)
           {
@@ -64,10 +64,10 @@ int locbuff(SIO *siop, FILE *rcvfp)
                     puts("\nRemote ignored flow-off request.\a");
                error = fwrite(buff, sizeof(uint8_t), p - buff, rcvfp) != (unsigned)(p - buff);
                bytetot += (ULONG)(p - buff);          /* running byte total           */
-               if (s_icntrl(siop, GET, CONSFLAG) == OFF  && !error)
+               if (s_icntrl(siop, GET, CONSFLAG, 0) == OFF  && !error)
                     printf("%lu total bytes written.\r", bytetot);
                p = buff;                     /* reset buffer                 */
-               s_icntrl(siop, T_OUTFLAG, OFF); /* restore zero wait on input */
+               s_icntrl(siop, T_OUTFLAG, OFF, 0); /* restore zero wait on input */
                flowon(siop);                    /* now release sender        */
                if (error == TRUE)
                     break;

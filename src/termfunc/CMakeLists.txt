@@ -9,4 +9,8 @@ set(sources
     upload.c
 )
 
+if(UNIX)
+    list(APPEND source _kbhit.c)
+endif()
+
 add_library(termfunc STATIC ${sources})

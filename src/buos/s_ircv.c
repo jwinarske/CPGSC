@@ -35,7 +35,7 @@ FAST s_ircv_xoxo(register SIO *siop)
     if ( ++siop->rcv_tailp == siop->rcv_buffend)
         siop->rcv_tailp = siop->rcv_buff;  /* wrap back to beginning   */
     diff = siop->rcv_headp - siop->rcv_tailp;
-    byte_left = (diff >= 0L) ? siop->rcv_buffsize - diff : abs(diff);
+    byte_left = (diff >= 0L) ? siop->rcv_buffsize - diff : llabs(diff);
     if ((byte_left > siop->rcv_buffsize - FLOW_TAILROOM) && siop->rcv_iflowstate == OFF)
     {
     siop->rcv_iflowstate = ON;
@@ -73,7 +73,7 @@ FAST s_ircv_rcts(register SIO *siop)
     if ( ++siop->rcv_tailp == siop->rcv_buffend)
         siop->rcv_tailp = siop->rcv_buff;  /* wrap back to beginning   */
     diff = siop->rcv_headp - siop->rcv_tailp;
-    bytes_left = (diff >= 0L) ? siop->rcv_buffsize - diff : abs(diff);
+    bytes_left = (diff >= 0L) ? siop->rcv_buffsize - diff : llabs(diff);
     if ((bytes_left > siop->rcv_buffsize - FLOW_TAILROOM) && siop->rcv_iflowstate == OFF) {
         siop->rcv_iflowstate = ON;
         set232(siop, RTS, ON);

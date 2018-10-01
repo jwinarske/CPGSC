@@ -3,8 +3,8 @@
 
 #ifndef __GNUC__
 #include <dos.h>        /* for _enable/_disable */
-#endif
 #include <conio.h>
+#endif
 /* NOTICE:
 *   One or more of the following must either be defined here or passed in
 *   on the compiler's command line:

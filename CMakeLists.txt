@@ -14,10 +14,16 @@ project(sio LANGUAGES C)
 #################################
 set(CMAKE_C_STANDARD 99)
 
+add_definitions(
+    -D_enable=
+    -D_disable=
+    -Dnear=
+    -Dfar=
+)
+
 if(NOT MSVC)
+
     add_definitions(
-        -Dnear=
-        -Dfar=
         -D_interrrupt=
         -DINTPTR=
         -DNO_EOL_OUTPUT
@@ -26,15 +32,8 @@ if(NOT MSVC)
     #set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS} -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections ")
     #set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS} -fno-common -Wall -fno-exceptions -Wno-aggressive-loop-optimizations ")
     #set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS} -Wno-char-subscripts -Wno-unused-but-set-variable -Werror -Wno-uninitialized ")
+    
 else()
-
-    add_definitions(
-        /D_enable=
-        /D_disable=
-        /Dnear=
-        /Dfar=
-        #/DCOM1SIO
-    )
 
     add_definitions(-D_CONSOLE -D_MBCS -D_CRT_SECURE_NO_WARNINGS)
 

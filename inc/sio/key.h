@@ -10,10 +10,9 @@
 FAST getkbch(void);
 FAST inkey(void);
 
-#ifdef _WIN32
 #define keystat _kbhit
 #define getkey  _getch
-#endif
+
 #define NOT_READY -1
 #define NO_KEY    0
 

@@ -35,7 +35,7 @@ void dnload(SIO *siop, int (*captfp)(SIO *, FILE *) )
      s_icntrl(siop, SET, T_OUT, _0_SEC_05); /* but set the interval for later */
      printf("\n%s is now ready for capture. Press Esc key to end.\n", fnbuff);
      printf("Terminal output is %s.\n",\
-     s_icntrl(siop, GET, CONSFLAG) ? "on": "off");
+     s_icntrl(siop, GET, CONSFLAG, NULL) ? "on": "off");
      xon(siop);                               /* send XON to get started      */
      errflag = (*captfp)(siop, rcvfp);        /* return code from disk write  */
      if (!errflag && bytetot)

@@ -19,9 +19,10 @@
 //TODO #define COM4SIO
 
 #include <stdio.h>
+#if !defined(__GNUC__)
 #include <conio.h>
 #include <dos.h>           /*//*/
-
+#endif
 
 #include <sio/siodef.h>
 #include <sio/ascii.h>

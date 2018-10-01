@@ -102,13 +102,13 @@ void isr_rcv450_xoxo(register SIO *siop)
           }
 
    diff = siop->rcv_headp - siop->rcv_tailp;
-   bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : abs(diff);
+   bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : llabs(diff);
    if (bytes_left > 1)                          /* don't let head wrap tail */
         {
         if ( ++siop->rcv_headp == siop->rcv_buffend) /* if at end of buffer */
              siop->rcv_headp = siop->rcv_buff;       /* Reset pointer       */
         diff = siop->rcv_headp - siop->rcv_tailp;    /* compute space       */
-        bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : abs(diff);
+        bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : llabs(diff);
         }
    if (bytes_left <= FLOW_HEADROOM)                  /* If at highwater     */
         {
@@ -141,13 +141,13 @@ void isr_rcv450_rcts(register SIO *siop)
   
    *siop->rcv_headp = s_rcv(siop);         /* Read receiver       */
    diff = siop->rcv_headp - siop->rcv_tailp;
-   bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : abs(diff);
+   bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : llabs(diff);
    if (bytes_left > 1)                   /* Don't let head wrap tail */
         {
         if ( ++siop->rcv_headp == siop->rcv_buffend)  /* If at end of buffer */
        	    siop->rcv_headp = siop->rcv_buff;              /* Reset pointer end */
         diff = siop->rcv_headp - siop->rcv_tailp;     /* compute space */
-        bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : abs(diff);
+        bytes_left = (diff >= 0) ? siop->rcv_buffsize - diff : llabs(diff);
         }
    if (bytes_left <= FLOW_HEADROOM)
         {

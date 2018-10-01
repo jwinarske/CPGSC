@@ -126,7 +126,7 @@ int x_rcv(SIO *siop)
                     errcode = x_except(siop, E_USRCAN, &errcnt, X_ERCVMAX);
                continue;
                }
-          for (i = 0, intp = (short *)rcvbuffp; i < paksize; i++)
+          for (i = 0, intp = (uint16_t *)rcvbuffp; i < paksize; i++)
                *intp++ = __s_waitch(siop, _0_SEC_1);  /*  rest of packet  */
           if (rcvbuffp->ckvhi == TIMEOUT)
                {

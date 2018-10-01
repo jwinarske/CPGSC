@@ -1,17 +1,6 @@
 #ifndef _XMOD_
 #define _XMOD_
 
-/*** FUNCTION PROTOTYPES ***/
-int x_snd(SIO *);
-int x_rcv(SIO *);
-uint16_t x_except(SIO *, uint16_t , uint16_t *, uint16_t);
-uint16_t x_rcvcrc(uint16_t *);
-uint16_t x_rcvcksum(uint16_t *);
-uint16_t x_sndcrc(uint8_t *);
-uint16_t x_sndcksum(uint8_t *);
-uint16_t makepacket(struct sndpacket *,uint16_t ,ULONG , FILE *);
-void ckvinstall(struct sndpacket *,uint16_t , uint16_t(*)(uint8_t*));
-
 #define DBLKSIZ    128          /* size of data field in packet              */
 #define HEADROOM   10           /* amount of memory to save from buffer      */
 #define SOH_TIMOUT _1_SEC_0     /* timeout interval for SOH                  */
@@ -83,5 +72,17 @@ enum xrcvcodes                  /* CODES USED ONLY IN X_RCV                  */
      E_DSKWRITE,                /* disk write error                          */
      E_RCVOK                    /* successful reception                      */
      };
+
+/*** FUNCTION PROTOTYPES ***/
+int x_snd(SIO *);
+int x_rcv(SIO *);
+uint16_t x_except(SIO *, uint16_t , uint16_t *, uint16_t);
+uint16_t x_rcvcrc(uint16_t *);
+uint16_t x_rcvcksum(uint16_t *);
+uint16_t x_sndcrc(uint8_t *);
+uint16_t x_sndcksum(uint8_t *);
+uint16_t makepacket(struct sndpacket *pbp, uint16_t pakcnt, ULONG paknum, FILE  *fp);
+void ckvinstall (struct sndpacket *pbp, uint16_t numpaks, uint16_t (*ckvfn)(uint8_t*));
+
 #endif    /* _XMOD_ */
 

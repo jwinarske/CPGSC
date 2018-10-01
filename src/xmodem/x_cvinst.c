@@ -20,11 +20,7 @@ FUNCTION NAME:  ckvinstall
 /*2: number of packets in buffer        */
 /*3: pointer to error-checking function */
 
-void ckvinstall
-        (struct sndpacket *pbp,
-     uint16_t numpaks,
-     uint16_t (*ckvfn)(uint8_t*)
-        )
+void ckvinstall (struct sndpacket *pbp, uint16_t numpaks, uint16_t (*ckvfn)(uint8_t*))
 {
      for (; numpaks > 0; --numpaks, ++pbp)
           pbp->ckval = (*ckvfn)(pbp->data);

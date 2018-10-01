@@ -87,7 +87,7 @@ SIO *s_open(uint16_t portnum)
             	siop->getflow_req = flow_req_none;
      			break;
      	case XON_XOFF:
-                if (siop->intrpt_status.rcv_on = ON)
+                if (siop->intrpt_status.rcv_on == ON)
                 	{
             	    siop->flowon      = ixon;
             	    siop->flowoff     = ixoff;
@@ -99,13 +99,13 @@ SIO *s_open(uint16_t portnum)
             	    siop->flowon      = xon;
             	    siop->flowoff     = xoff;
             	    }
-                if (siop->intrpt_status.tx_on = ON)
+                if (siop->intrpt_status.tx_on == ON)
             	    siop->getflow_req = flow_req_xoxo;
                 else
             	    siop->getflow_req = flow_req_xoxo;
      	        break;
      	case RTS_CTS:
-                if (siop->intrpt_status.rcv_on = ON)
+                if (siop->intrpt_status.rcv_on == ON)
                 	{
     	            siop->flowon      = irtson;
     	            siop->flowoff     = irtsoff;
@@ -117,7 +117,7 @@ SIO *s_open(uint16_t portnum)
     	            siop->flowon      = rtson;
     	            siop->flowoff     = rtsoff;
                     }
-                if (siop->intrpt_status.tx_on = ON)
+                if (siop->intrpt_status.tx_on == ON)
     	            siop->getflow_req = iflow_req_rcts;
                 else
     	            siop->getflow_req = flow_req_rcts;

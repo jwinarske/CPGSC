@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #ifdef __GNUC__
 #include <libio.h>
+#include <stddef.h>
 #endif
 
 #undef   NUL

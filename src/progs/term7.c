@@ -11,16 +11,16 @@ PROGRAM NAME:  TERM7
 #include <stdlib.h>
 #include <ctype.h>
 
-#include <sio\siodef.h>
-#include <sio\ascii.h>
-#include <sio\misc.h>
-#include <sio\sioctl.h>
-#include <sio\buos.h>
-#include <sio\key.h>
-#include <sio\term.h>
-#include <sio\xmod.h>
-#include <sio\modem.h>
-#include <sio\level0.h>
+#include <sio/siodef.h>
+#include <sio/ascii.h>
+#include <sio/misc.h>
+#include <sio/sioctl.h>
+#include <sio/buos.h>
+#include <sio/key.h>
+#include <sio/term.h>
+#include <sio/xmod.h>
+#include <sio/modem.h>
+#include <sio/level0.h>
 
 #define MENU         CTRL_A             /* Command summary                */
 #define FORMAT       'A'                /* Setup serial parmeters         */
@@ -278,23 +278,31 @@ SIO *siop;
         vers, MENU + '@');
 
     flowon(siop);
+
     for (EVER) {                           /*         eternal loop         */
 
         s_fgetc(siop);                     /* s_fgetc will echo            */
-        if ( (c = inkey()) != NOT_READY)
-               if (c == MENU)
-                    {
-                    if (menu(siop))
-                         break;          /* if menu returns non-zero         */
-                    }
-               else
-                    s_fputc(siop, c);
-          if(serial_status(siop, BREAK_ON))
-               puts("Break Detected");
-          }
-     s_opop(siop);                      /* restore both control structures   */
-     s_ipop(siop);
-     m_unconfig(siop);
+
+        if ( (c = inkey()) != NOT_READY) {
+
+            if (c == MENU) {
+
+                if (menu(siop)) {
+                    break;          /* if menu returns non-zero         */
+                }
+            }
+            else {
+                s_fputc(siop, c);
+            }
+            if(serial_status(siop, BREAK_ON)) {
+                puts("Break Detected");
+            }
+        }
+    }
+
+    s_opop(siop);                      /* restore both control structures   */
+    s_ipop(siop);
+    m_unconfig(siop);
 }
 
 int main(int argc, char *argv[])

@@ -24,13 +24,13 @@ enum flowtypes{ NO_FLOW = 0, XON_XOFF, RTS_CTS };
 #define FLOW_HEADROOM 3
 #define FLOW_TAILROOM FLOW_HEADROOM 
 #else
-#define FLOW_HEADROOM 10   
-#define FLOW_TAILROOM FLOW_HEADROOM 
+#define FLOW_HEADROOM 10
+#define FLOW_TAILROOM FLOW_HEADROOM
 #endif
 
 #define IO_STKSIZ  10         /* Size of I/O push/pop stack       */
 int    s_ocntrl(SIO *,short, short, uint16_t);
-int    s_icntrl(SIO *, short, short,...);
+int    s_icntrl(SIO *, short, short, unsigned);
 #define NOT_READY -1
 #define IGNORE    -2
 #define NOECHO     1

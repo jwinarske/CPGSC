@@ -8,6 +8,8 @@ set(sources
     t4_trees.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(fax STATIC ${sources})
 
 add_executable(bmap2run bmap2run.c)

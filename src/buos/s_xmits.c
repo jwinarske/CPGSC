@@ -8,7 +8,7 @@ FUNCTION NAME: s_xmitstat
      COMMENTS: Compare to the s_txemtpy function
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 FAST s_xmitstat(register SIO *siop)
 {

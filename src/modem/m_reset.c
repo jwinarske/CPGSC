@@ -14,12 +14,12 @@ FUNCTION NAME:  m_reset
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/ascii.h>
-#include <sio/misc.h>
-#include <sio/key.h>
-#include <sio/level0.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/ascii.h"
+#include "sio/misc.h"
+#include "sio/key.h"
+#include "sio/level0.h"
+#include "sio/modem.h"
 
 
 int m_reset(SIO *siop)

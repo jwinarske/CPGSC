@@ -25,13 +25,13 @@
 #endif
 
 
-#include <sio/siodef.h>
-#include <sio/ascii.h>
-#include <sio/uart.h>
-#include <sio/sioctl.h>
-#include <sio/ibmpc.h>
-#include <sio/buos.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/ascii.h"
+#include "sio/uart.h"
+#include "sio/sioctl.h"
+#include "sio/ibmpc.h"
+#include "sio/buos.h"
+#include "sio/modem.h"
 
 #pragma check_stack-                 /* turn off stack checking */
 

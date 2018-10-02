@@ -14,7 +14,7 @@ FUNCTION NAME:  bigbuff
 */
 
 #include <stdlib.h>
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 /*1: block size for allocation         */
 /*2: number of blocks NOT to allocate  */

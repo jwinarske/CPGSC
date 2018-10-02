@@ -10,9 +10,9 @@ FUNCTION NAME: setup232
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/misc.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/misc.h"
+#include "sio/key.h"
 
 void setup232(SIO *siop)
 {

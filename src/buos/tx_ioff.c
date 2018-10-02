@@ -13,9 +13,9 @@ FUNCTION NAME: tx_ioff
 
 
 #include <malloc.h>
-#include <sio/siodef.h>      /* for constants */
-#include <sio/buos.h>        /* for s_txempty */
-#include <sio/uart.h>        /* for s_revector*/
+#include "sio/siodef.h"      /* for constants */
+#include "sio/buos.h"        /* for s_txempty */
+#include "sio/uart.h"        /* for s_revector*/
 
 
 short tx_ioff(SIO *siop, short mode)

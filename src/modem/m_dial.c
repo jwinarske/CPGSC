@@ -13,11 +13,11 @@ FUNCTION NAME:  m_dial
 
 #include <stdio.h>
 #include <ctype.h>
-#include <sio/siodef.h>
-#include <sio/ascii.h>
+#include "sio/siodef.h"
+#include "sio/ascii.h"
 #include <string.h>
-#include <sio/buos.h>
-#include <sio/modem.h>
+#include "sio/buos.h"
+#include "sio/modem.h"
 
 int m_dial(SIO *siop, char  phonenum[])
 {

@@ -14,10 +14,10 @@ FUNCTION NAME:  m_warndcd
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/misc.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/misc.h"
+#include "sio/key.h"
 #include <ctype.h>
 
 short m_warndcd(SIO *siop, bool warnmode)

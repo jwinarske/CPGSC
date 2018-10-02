@@ -9,8 +9,8 @@ FUNCTION NAME:  s_config
       RETURNS:  void
 */
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
 
 /* copy physical UART regs into virtual regs */
 void s_config(SIO *siop)

@@ -11,8 +11,8 @@ FUNCTION NAME:  vset232
                 OFF and ON are defined in SIODEF.H
 */
 
-#include <sio/siodef.h>
-#include <sio/uart.h>
+#include "sio/siodef.h"
+#include "sio/uart.h"
 
 
 int vset232(SIO *siop, struct vout232_ *p232, bool state)

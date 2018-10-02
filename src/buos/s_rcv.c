@@ -7,7 +7,7 @@ FUNCTION NAME: s_rcv
       RETURNS: FAST: the uint8_t received.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 FAST s_rcv(register SIO *siop)
 {

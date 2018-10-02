@@ -4,8 +4,8 @@ Compile these and add them to he XMODEM library
 */
 
 #include <stdio.h>                   /* Needed by modem.h                 */
-#include <sio/siodef.h>
-#include <sio/xmod.h>
+#include "sio/siodef.h"
+#include "sio/xmod.h"
 
 struct rcvpacket *rcvbuffp = NIL;    /* pointer to receive packet buffer  */
 int    paksize = 0;                  /* number of uint8_ts to xmit or rcv    */

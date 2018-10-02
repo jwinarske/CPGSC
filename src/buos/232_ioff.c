@@ -7,9 +7,9 @@ FUNCTION NAME:  rs232_ioff
       RETURNS: short: Always returns OFF.
 */
 
-#include <sio/siodef.h>      /* for constants */
-#include <sio/buos.h>        /* for s_txempty */
-#include <sio/uart.h>      /* for s_revector*/
+#include "sio/siodef.h"      /* for constants */
+#include "sio/buos.h"        /* for s_txempty */
+#include "sio/uart.h"      /* for s_revector*/
 
 short rs232_ioff(SIO *siop)
 {

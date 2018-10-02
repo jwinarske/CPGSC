@@ -16,9 +16,9 @@ FUNCTION NAME:  s_iadmin
                 an array of function pointers.
 */
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
+#include "sio/buos.h"
 
 
 void s_iadmin(SIO *siop)

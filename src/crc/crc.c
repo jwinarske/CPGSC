@@ -6,8 +6,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/crc.h>
+#include "sio/siodef.h"
+#include "sio/crc.h"
 
 
 int main(int argc, char *argv[])

@@ -9,7 +9,7 @@ FUNCTION NAME:  getbaud
                 pointer is NIL)
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 short getbaud(SIO *siop)
 {

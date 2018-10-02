@@ -14,7 +14,7 @@ FUNCTION NAME:  _vsetbr
 
 */
 //#include <stdio.h>        /*//*/
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 void _vsetbr(register SIO *siop, struct vbaud_ *brp, REG lobaud, REG hibaud)
 {

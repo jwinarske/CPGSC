@@ -17,4 +17,6 @@ set(sources
     uvstbits.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(u16x50 STATIC ${sources})

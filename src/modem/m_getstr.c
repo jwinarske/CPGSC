@@ -9,9 +9,9 @@ FUNCTION NAME:  m_getstr
      COMMENTS:  The timeout interval is derived from the modem structure.
 */
 
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/sioctl.h"
 
 short m_getstr(SIO *siop, char * replybuff, short numc)
 {

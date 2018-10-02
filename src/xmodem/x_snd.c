@@ -13,14 +13,14 @@ FUNCTION NAME: x_snd
 
 #include <stdio.h>              /* Needed by modem.h   */
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/ascii.h>
-#include <sio/xmod.h>
-#include <sio/misc.h>
-#include <sio/level0.h>        /* for timing constants */
-#include <sio/buos.h>
-#include <sio/key.h>
-#include <sio/crc.h>
+#include "sio/siodef.h"
+#include "sio/ascii.h"
+#include "sio/xmod.h"
+#include "sio/misc.h"
+#include "sio/level0.h"        /* for timing constants */
+#include "sio/buos.h"
+#include "sio/key.h"
+#include "sio/crc.h"
 
 int x_snd(SIO *siop)
 {

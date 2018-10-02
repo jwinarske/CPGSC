@@ -1,11 +1,8 @@
 #ifndef   _T4_
 #define   _T4_
 
-/**** FUNCTION PROTOTYPES ****/
-uint16_t bit2run(uint8_t *, uint16_t, uint16_t *);
-int    run2bits(FILE *, FILE *, uint8_t *, short, short *, short);
-short  t4encode(FAST *, short, FAST *);
-int    t4decode(FILE *, FILE *, short *, uint16_t, FAST *, uint16_t);
+#include <stdio.h>
+#include "siodef.h"
 
 /*
 STRUCTURE:  MHcode (typedef)
@@ -23,10 +20,10 @@ STRUCTURE:  T4NODE (typedef)
 */
 typedef struct t4node
     {
-    struct t4node near *zero; /* pointer to the next zero branch  */
-    struct t4node near *one;  /* pointer to the next one branch   */
+    struct t4node *zero; /* pointer to the next zero branch  */
+    struct t4node *one;  /* pointer to the next one branch   */
     short  run_len;
-    } near T4NODE;
+    } T4NODE;
 
 #define NOTTERMINAL   12000
 #define WHITE        0x0000
@@ -35,6 +32,12 @@ typedef struct t4node
 #define EOL_INDEX       104   /* Index into the encoding tables   */
 #define BYTES_PER_LINE  216
 #define LINES_PER_PAGE 1728
+
+/**** FUNCTION PROTOTYPES ****/
+uint16_t bit2run(uint8_t *, uint16_t, uint16_t *);
+int    run2bits(FILE *, FILE *, uint8_t *, short, short *, short);
+short  t4encode(FAST *, short, FAST *);
+int    t4decode(FILE *, FILE *, short *, uint16_t, FAST *, uint16_t);
 
 #endif   /*_T4_ */
 

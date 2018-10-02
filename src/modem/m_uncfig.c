@@ -11,8 +11,8 @@ FUNCTION NAME:  m_unconfig
 
 */
 
-#include <sio/siodef.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
 
 short m_unconfig(SIO *siop)
 {

@@ -11,8 +11,8 @@ FUNCTION NAME:  t4decode
 
 #include <stdio.h>
 #include <memory.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 int t4decode(FILE *t4file, FILE *runfile, short *runbufp,
             uint16_t runbuff_len, FAST *t4bufp, uint16_t t4_len)
 {

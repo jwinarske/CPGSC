@@ -7,8 +7,8 @@ ARRAY NAMES:  encwhite, encblack
 */
 
 #include <stdio.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 MHcode encwhite[] = {
      {0x00ac, 8},  {0x0038, 6},  {0x000e, 4},   {0x0001, 4},    /*  0*/

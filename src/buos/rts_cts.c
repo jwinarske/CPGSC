@@ -13,9 +13,9 @@ INCLUDE FILES: stdio.h, siodef.h, buos.h, sioctl.h
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/sioctl.h"
 
 
 uint16_t flow_req_rcts(SIO *siop, ...)

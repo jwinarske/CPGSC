@@ -15,9 +15,9 @@ FUNCTION NAME:  flow_req_xoxo, xon, xoff
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/sioctl.h"
 
 
 uint16_t flow_req_xoxo(SIO *siop, ...)

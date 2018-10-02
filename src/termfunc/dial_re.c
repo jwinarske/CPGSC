@@ -6,9 +6,9 @@ FUNCTION NAME:  dial and redial
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/misc.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/misc.h"
 
 
 int dial(SIO *siop)

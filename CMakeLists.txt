@@ -49,9 +49,7 @@ else()
 endif()
 
 
-set(SIO_INC_PATH ${CMAKE_SOURCE_DIR}/inc)
-
-include_directories(${SIO_INC_PATH})
+set(SIO_INC_DIR ${CMAKE_SOURCE_DIR}/inc)
 
 
 #################################

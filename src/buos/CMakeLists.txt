@@ -32,4 +32,6 @@ set(sources
     rcv_ioff.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(buos STATIC ${sources})

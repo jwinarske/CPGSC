@@ -10,7 +10,7 @@ FUNCTION NAME:  s_ixmitstat
                 pointer in the SIO.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 FAST s_ixmitstat(register SIO *siop)
 {

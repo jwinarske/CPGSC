@@ -9,4 +9,6 @@ set(sources
     upload.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(termfunc STATIC ${sources})

@@ -9,11 +9,11 @@ FUNCTION NAME: tx_ion
 */
 
 #include <stdio.h>      /* for constants */
-#include <sio/siodef.h>      /* for constants */
 #include <malloc.h>      /* for constants */
-#include <sio/buos.h>        /* for s_txempty */
-#include <sio/uart.h>      /* for s_revector*/
-#include <sio/level0.h>
+#include "sio/siodef.h"      /* for constants */
+#include "sio/buos.h"        /* for s_txempty */
+#include "sio/uart.h"      /* for s_revector*/
+#include "sio/level0.h"
 
 #define Q_SIZE (numbuffs*sizeof(struct tx_queue))
 

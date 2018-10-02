@@ -9,7 +9,7 @@ FUNCTION NAME:  _vset232
      COMMENTS:  This function is called only by vset232.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 void _vset232(register SIO *siop, struct vout232_ *p232, REG binval)
 {

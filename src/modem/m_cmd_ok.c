@@ -12,8 +12,8 @@ FUNCTION NAME:  m_cmd_OK
                 operations!
 */
 
-#include <sio/siodef.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
 
 int m_cmd_OK(SIO *siop, char *cmdstr)
 {

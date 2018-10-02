@@ -11,8 +11,8 @@ FUNCTION NAME:  run2bits
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 
 #define NUMBITS  8

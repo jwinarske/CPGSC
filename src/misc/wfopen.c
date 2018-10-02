@@ -13,10 +13,10 @@ FUNCTION NAME:  wfopen
 */
 
 #include  <stdio.h>
-#include  <sio/siodef.h>
-#include  <sio/misc.h>
 #include  <ctype.h>
 #include  <string.h>
+#include  "sio/siodef.h"
+#include  "sio/misc.h"
 
 
 /* 1: user prompt string           */

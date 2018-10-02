@@ -12,7 +12,7 @@ FUNCTION NAME:  vstat232
 */
 
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 short vstat232(SIO *siop, struct vin232_ *p232)
 {

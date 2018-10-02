@@ -13,4 +13,6 @@ set(sources
     x_except.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(xmodem STATIC ${sources})

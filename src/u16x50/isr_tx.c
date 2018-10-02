@@ -13,9 +13,9 @@ INCLUDE FILES: siodef.h, buos.h, sioctl.h
 */
 
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/sioctl.h"
 
 
 void isr_tx(SIO *siop)

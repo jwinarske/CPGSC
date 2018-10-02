@@ -1,14 +1,10 @@
 #ifndef   _KEY_
 #define  _KEY_
 
-#include <sio/siolocal.h>
+#include "sio/siolocal.h"
 #ifndef __GNUC__
 #include <conio.h>
 #endif
-
-/**** FUNCTION PROTOTYPES ****/
-FAST getkbch(void);
-FAST inkey(void);
 
 #ifdef _WIN32
 #define keystat _kbhit
@@ -17,5 +13,8 @@ FAST inkey(void);
 #define NOT_READY -1
 #define NO_KEY    0
 
-#endif /* _KEY_    */
+/**** FUNCTION PROTOTYPES ****/
+FAST getkbch(void);
+FAST inkey(void);
 
+#endif /* _KEY_    */

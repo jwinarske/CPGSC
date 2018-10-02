@@ -13,8 +13,8 @@ FUNCTION NAME:  s_ipush, s_ipop
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
 
 static struct sictl_ *istack[IO_STKSIZ] = { NIL }; /* init 1st element to NIL  */
 static struct sictl_ **istackp = istack;         /* pointer to top of stack  */

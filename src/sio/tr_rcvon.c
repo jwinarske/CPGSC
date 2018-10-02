@@ -11,8 +11,8 @@ FUNCTION NAME:  setuart
                 successful.
 */
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 int setuart(SIO *siop, RANK whichone, uint16_t state)
 {

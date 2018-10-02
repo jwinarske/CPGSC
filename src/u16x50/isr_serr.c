@@ -18,8 +18,8 @@ FUNCTION NAME: isr_serr
 */
 
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
 
 void isr_serr(register SIO* siop)
 {

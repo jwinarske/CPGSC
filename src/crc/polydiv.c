@@ -9,7 +9,7 @@ FUNCTION NAME:  polydiv
      COMMENTS:  This function produces a remainder, not a CRC.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 uint16_t polydiv(uint16_t data, uint16_t divisor, uint16_t remainder)

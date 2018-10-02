@@ -11,7 +11,7 @@ FUNCTION NAME:  crcrevupdate
                 CRC-16, therefore, A001 (inverse CRC-16) must be passed.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 void crcrevupdate(uint16_t data, uint16_t *accum, uint16_t *crcrevtab)

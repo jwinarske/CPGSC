@@ -12,10 +12,10 @@ FUNCTION NAME:  rfopen
 
 
 #include  <stdio.h>
-#include  <sio/siodef.h>
-#include  <sio/misc.h>
 #include  <errno.h>
 #include  <string.h>
+#include  "sio/siodef.h"
+#include  "sio/misc.h"
 
 
 /* 1: user prompt string           */

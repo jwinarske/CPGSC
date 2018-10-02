@@ -9,7 +9,7 @@ FUNCTION NAME:  s_inchar
      COMMENTS:  The function can also be written as a macro in STDIO.H:
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 int s_inchar(SIO *siop)
 {

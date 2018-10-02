@@ -9,9 +9,9 @@ FUNCTION NAME:  set232
 */
 
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/level0.h>        /* for timing constants */
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/level0.h"        /* for timing constants */
 
 short set232(SIO* siop, RANK whichone, bool state)
 {

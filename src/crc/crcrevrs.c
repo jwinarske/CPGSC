@@ -10,7 +10,7 @@ FUNCTION NAME:  crcrevhware
                 be reversed.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 /*1: NOT a char                        */

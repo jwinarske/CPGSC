@@ -7,7 +7,7 @@ FUNCTION NAME:  s_iflush
       RETURNS:  int:  uint8_t if available, otherwise -1;
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 int s_iflush(SIO *siop)
 {

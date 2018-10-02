@@ -20,11 +20,11 @@ FUNCTION NAME:  s_fgetc
 
 #include <stdio.h>
 #include <ctype.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/ascii.h>
-#include <sio/level0.h>        /* for timing constants */
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/ascii.h"
+#include "sio/level0.h"        /* for timing constants */
+#include "sio/buos.h"
 
 int s_fgetc(SIO *siop)
 {

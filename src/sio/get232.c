@@ -9,7 +9,7 @@ FUNCTION NAME:  get232
                 (SIO pointer is NIL).
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 RANK get232(SIO *siop, RANK whichone)
 {

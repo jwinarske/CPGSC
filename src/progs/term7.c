@@ -11,16 +11,16 @@ PROGRAM NAME:  TERM7
 #include <stdlib.h>
 #include <ctype.h>
 
-#include <sio/siodef.h>
-#include <sio/ascii.h>
-#include <sio/misc.h>
-#include <sio/sioctl.h>
-#include <sio/buos.h>
-#include <sio/key.h>
-#include <sio/term.h>
-#include <sio/xmod.h>
-#include <sio/modem.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/ascii.h"
+#include "sio/misc.h"
+#include "sio/sioctl.h"
+#include "sio/buos.h"
+#include "sio/key.h"
+#include "sio/term.h"
+#include "sio/xmod.h"
+#include "sio/modem.h"
+#include "sio/level0.h"
 
 #define MENU         CTRL_A             /* Command summary                */
 #define FORMAT       'A'                /* Setup serial parmeters         */

@@ -14,9 +14,9 @@ FUNCTION NAME:  m_parsemsg
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/misc.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/misc.h"
 
 void m_parsemsg(SIO *siop, struct parse_info *msgp, char * modemstr)
 {

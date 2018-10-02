@@ -10,11 +10,11 @@ FUNCTION NAME: dnload
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/buos.h>
-#include <sio/misc.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/buos.h"
+#include "sio/misc.h"
+#include "sio/key.h"
 
 ULONG bytetot;                           /* total number of uint8_ts captured    */
 

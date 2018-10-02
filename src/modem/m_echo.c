@@ -10,9 +10,9 @@ FUNCTION NAME:  m_echo
      COMMENTS:
 */
 
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/sioctl.h"
 
 void m_echo(SIO * siop, bool state)
 {

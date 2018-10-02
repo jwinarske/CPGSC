@@ -9,8 +9,8 @@ FUNCTION NAME:  stat232
                 the rank argument is out of range.
 */
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 short stat232(SIO *siop, RANK whichone)
 {

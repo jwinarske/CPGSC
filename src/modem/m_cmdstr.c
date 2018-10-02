@@ -13,9 +13,9 @@ FUNCTION NAME:  m_cmd_str
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 #include <string.h>
-#include <sio/modem.h>
+#include "sio/modem.h"
 
 short m_cmd_str(SIO *siop, char* cmdstr, char* replybuff, uint16_t numc)
 {

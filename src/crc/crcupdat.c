@@ -10,7 +10,7 @@ FUNCTION NAME:  crcupdate
                 crctab.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 /*2: pointer to a CRC accumulator */

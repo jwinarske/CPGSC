@@ -1,6 +1,8 @@
 #ifndef  _MODEM_
 #define  _MODEM_
 
+#include "siodef.h"
+
 /*
 STRUCT NAME:  parse_info
 HEADER FILE:  MODEM.H

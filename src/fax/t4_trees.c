@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 T4NODE whitetree[], blacktree[], eoltree[];
 /*-

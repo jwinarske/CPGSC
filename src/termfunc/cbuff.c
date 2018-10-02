@@ -13,10 +13,10 @@ FUNCTION NAME:  cbuff
 #define XPAUSE    BUFSIZ - BYTESLEFT   /* uint8_ts before sending flow control  */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/buos.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/buos.h"
+#include "sio/key.h"
 
 int cbuff(SIO *siop, FILE *rcvfp)
 {

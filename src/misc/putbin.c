@@ -9,7 +9,7 @@ FUNCTION NAME:  putbin
 */
 
 #include  <stdio.h>
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 /*1: 16 bit int */

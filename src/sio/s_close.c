@@ -9,10 +9,10 @@ FUNCTION NAME:  s_close
 
 #include <stdio.h>            /*//*/
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/uart.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/uart.h"
+#include "sio/level0.h"
 #include <malloc.h> /*//*/
 
 int s_close(SIO *siop)

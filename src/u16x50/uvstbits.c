@@ -10,7 +10,7 @@ FUNCTION NAME:  _vsetbits
      COMMENTS:  This function is called only by vsetbits.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 void _vsetbits(register SIO *siop, struct vregbits_ *brp, REG binval)

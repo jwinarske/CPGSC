@@ -12,11 +12,11 @@ FUNCTION NAME: locbuff
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/buos.h>
-#include <sio/misc.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/buos.h"
+#include "sio/misc.h"
+#include "sio/key.h"
 
 #define BYTESLEFT      25
 #define HEADROOM        5                   /* blocks to save for locals    */

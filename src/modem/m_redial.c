@@ -9,8 +9,8 @@ FUNCTION NAME:  m_redial
                 structure by m_dial.
 */
 
-#include <sio/siodef.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
 
 int m_redial(SIO *siop)
 {

@@ -11,8 +11,8 @@ FUNCTION NAME:  s_clrsio
 */
 
 
-#include <sio/siodef.h>
-#include <sio/level0.h>        /* for timing constants */
+#include "sio/siodef.h"
+#include "sio/level0.h"        /* for timing constants */
 
 int s_clrsio(SIO *siop, uint16_t numuint8_ts)
 {

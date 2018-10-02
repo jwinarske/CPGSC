@@ -7,11 +7,11 @@ FUNCTION NAME: upload
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/misc.h>
-#include <sio/key.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/misc.h"
+#include "sio/key.h"
+#include "sio/buos.h"
 
 void upload(SIO *siop)
 {

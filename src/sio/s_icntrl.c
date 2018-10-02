@@ -12,8 +12,8 @@ FUNCTION NAME:  s_icntrl
 */
 
 
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
 
 /* 2: SET or GET (see SIOCTL.H)         */
 /* 4: new value for member (SET only )  */

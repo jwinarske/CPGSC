@@ -9,7 +9,7 @@ FUNCTION NAME:  getformat
                 (SIO pointer is NIL).
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 short getformat(SIO *siop, RANK whichone)
 {

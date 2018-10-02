@@ -8,9 +8,9 @@ FUNCTION NAME:  rcv_ioff
 */
 
 #include <malloc.h>      /* for constants */
-#include <sio/siodef.h>      /* for constants */
-#include <sio/buos.h>        /* for s_txempty */
-#include <sio/uart.h>      /* for s_revector*/
+#include "sio/siodef.h"      /* for constants */
+#include "sio/buos.h"        /* for s_txempty */
+#include "sio/uart.h"      /* for s_revector*/
 
 short rcv_ioff(SIO *siop)
 {

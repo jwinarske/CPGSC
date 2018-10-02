@@ -13,10 +13,10 @@ FUNCTION NAME:  m_config
 
 #include <stdio.h>  /*//*/
 #include <stdlib.h>
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 #include <string.h>
-#include <sio/modem.h>
-#include <sio/sioctl.h>
+#include "sio/modem.h"
+#include "sio/sioctl.h"
 
 int m_config(SIO *siop)
 {

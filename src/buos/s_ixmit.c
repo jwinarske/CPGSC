@@ -13,7 +13,7 @@ FUNCTION NAME:  s_ixmit
 
 
 #include <stdio.h>
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 void s_ixmit(register SIO *siop, FAST c)
 {

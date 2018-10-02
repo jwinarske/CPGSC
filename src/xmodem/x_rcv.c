@@ -13,14 +13,14 @@ FUNCTION NAME: x_rcv
 
 #include <stdio.h>        /* Needed by modem.h    */
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/ascii.h>
-#include <sio/xmod.h>
-#include <sio/crc.h>
-#include <sio/buos.h>
-#include <sio/misc.h>
-#include <sio/key.h>
-#include <sio/level0.h>   /* for timing constants */
+#include "sio/siodef.h"
+#include "sio/ascii.h"
+#include "sio/xmod.h"
+#include "sio/crc.h"
+#include "sio/buos.h"
+#include "sio/misc.h"
+#include "sio/key.h"
+#include "sio/level0.h"   /* for timing constants */
 
 int x_rcv(SIO *siop)
 {

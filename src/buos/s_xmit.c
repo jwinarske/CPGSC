@@ -7,7 +7,7 @@ FUNCTION NAME: s_xmit
       RETURNS: void
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 void s_xmit(register SIO *siop, FAST c)
 {

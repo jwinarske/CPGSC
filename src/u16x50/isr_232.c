@@ -21,8 +21,8 @@ FUNCTION NAME: isr_stat232
                         5          gpi2              gpi2
 */
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
 
 void isr_stat232(register SIO* siop)
 {

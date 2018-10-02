@@ -9,11 +9,11 @@ FUNCTION NAME:  s_open
 
 #include <stdio.h>            /*//*/
 #include <malloc.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/sioctl.h>
-#include <sio/uart.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/sioctl.h"
+#include "sio/uart.h"
+#include "sio/level0.h"
 
 
 int s_errno;

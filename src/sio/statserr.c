@@ -15,8 +15,8 @@ FUNCTION NAME: serial_status
                    Parity  = bit 1    BREAK   = bit 3
 */
 
-#include <sio/siodef.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/level0.h"
 
 short serial_status(SIO *siop, RANK whichone)
 {

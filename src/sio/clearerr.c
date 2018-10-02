@@ -9,8 +9,8 @@ OTHER OBJECTS: Clears error flags in the SIO.
      COMMENTS:
 */
 
-#include <sio/siodef.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/level0.h"
 
 
 void s_clearerr(SIO *siop)

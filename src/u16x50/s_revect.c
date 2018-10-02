@@ -9,9 +9,9 @@ FUNCTION NAME: s_revector
                returning void."
 */
 
-#include <sio/siodef.h>      
-#include <sio/level0.h>
-#include <sio/uart.h>       /* ADD */
+#include "sio/siodef.h"      
+#include "sio/level0.h"
+#include "sio/uart.h"       /* ADD */
 
 #pragma check_stack-
                              /* changed */

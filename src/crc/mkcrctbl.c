@@ -11,7 +11,7 @@ FUNCTION NAME:  mk_crctbl
 */
 
 #include <stdlib.h>           /* for malloc function prototype */
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 /*3: pointer to CRC function      */

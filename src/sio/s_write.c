@@ -8,7 +8,7 @@ FUNCTION NAME: s_write
      COMMENTS: Can be a macro.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 short s_write(SIO *siop, uint8_t *newbuff, short count)

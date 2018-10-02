@@ -10,7 +10,7 @@ FUNCTION NAME: br_to_bcode
                on the left and baud rate codes on the right.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 #define WIDTH 2
 

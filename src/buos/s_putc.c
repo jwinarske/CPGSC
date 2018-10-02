@@ -7,7 +7,7 @@ FUNCTION NAME:  s_putc
       RETURNS:  void
      COMMENTS:  Access to the serial port is through an SIO structure.
 */
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 void s_putc(register SIO *siop, uint8_t c)
 {

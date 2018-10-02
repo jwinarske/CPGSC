@@ -7,9 +7,9 @@ FUNCTION NAME:  serr_ion
      RETURNS:   short: Always returns ON.
 */
 
-#include <sio/siodef.h>      /* for constants */
-#include <sio/buos.h>        /* for s_txempty */
-#include <sio/uart.h>      /* for s_revector*/
+#include "sio/siodef.h"      /* for constants */
+#include "sio/buos.h"        /* for s_txempty */
+#include "sio/uart.h"      /* for s_revector*/
 
 short serr_ion(SIO *siop)
 {

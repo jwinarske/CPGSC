@@ -10,6 +10,8 @@ set(sources
     polydiv.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(crc STATIC ${sources})
 
 add_executable(crc_main crc.c)

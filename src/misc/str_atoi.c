@@ -10,7 +10,7 @@ FUNCTION NAME:  str_atoi
 
 #include <stdlib.h>
 #include <ctype.h>
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 int str_atoi(char *buffp)
 {

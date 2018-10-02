@@ -1,8 +1,10 @@
 #ifndef  _SIODEF_
 #define  _SIODEF_
 
-#include <sio/siolocal.h>
-//TODO #include <sio/uart.h>
+#include "siolocal.h"
+#include "siodef.h"
+
+//TODO #include "sio/uart.h"
 
 /**** FUNCTION PROTOTYPES ****/
 int    br_to_bcode(uint16_t);
@@ -122,8 +124,6 @@ enum baudcodes
     NUMBAUDS
     };
 
-
-#include <sio/modem.h>
 /*
     STRUCT : sictl_
 HEADER FILE: SIODEF.H

@@ -11,8 +11,8 @@ FUNCTION NAME:  bit2run
 */
 
 #include <stdio.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 
 uint16_t bit2run(uint8_t bitbuff[], uint16_t numuint8_ts, uint16_t runbuff[] )

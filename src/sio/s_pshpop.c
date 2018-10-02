@@ -13,8 +13,8 @@ FUNCTION NAME:  s_opush, s_opop
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
 
 
 static struct soctl_ *ostack[IO_STKSIZ] = { NIL }; /* init 1st element to NIL  */

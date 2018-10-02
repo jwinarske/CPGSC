@@ -15,10 +15,10 @@ FUNCTION NAME:  s_fgetln
 
 enum {LEADING_CR = 0, LEADING_LF, IN_MSG, TRAILING_CR, TRAILING_LF, EXIT};
 
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/buos.h>
-#include <sio/ascii.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/buos.h"
+#include "sio/ascii.h"
 
 int s_fgetln(SIO *siop, char *buff, short numc)
 {

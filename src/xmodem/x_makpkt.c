@@ -10,9 +10,9 @@ FUNCTION NAME:  makepacket
 */
 
 #include <stdio.h>                        /* Needed by modem.h                 */
-#include <sio/ascii.h>
-#include <sio/siodef.h>
-#include <sio/xmod.h>
+#include "sio/ascii.h"
+#include "sio/siodef.h"
+#include "sio/xmod.h"
 
  /*1: "packet buffer pointer"      */
  /*2:  number of  packets in buffer */

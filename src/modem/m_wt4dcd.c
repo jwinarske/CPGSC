@@ -14,9 +14,9 @@ FUNCTION NAME:  m_wait4dcd
 
 #include <stdio.h>                          /*//*/
 #include <string.h>                         /*//*/
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/modem.h"
 
 int m_wait4dcd(SIO *siop)
 {

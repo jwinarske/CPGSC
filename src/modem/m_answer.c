@@ -11,10 +11,10 @@ FUNCTION NAME:  m_answer
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>
-#include <sio/level0.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
+#include "sio/level0.h"
+#include "sio/modem.h"
 
 int m_answer(SIO *siop)
 {

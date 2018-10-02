@@ -12,9 +12,9 @@ FUNCTION NAME:  s_fgets
 
 */
 
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/buos.h"
 
 
 int s_fgets(SIO *siop, char *buff, int numc)

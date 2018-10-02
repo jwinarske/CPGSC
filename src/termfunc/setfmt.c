@@ -9,9 +9,9 @@ FUNCTION NAME: set_params
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/misc.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/misc.h"
+#include "sio/key.h"
 
 extern char *errstr[], *sbstr[], *parstr[], *dlstr[], *brstr[];
 

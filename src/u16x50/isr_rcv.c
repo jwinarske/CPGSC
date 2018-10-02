@@ -2,10 +2,10 @@
 // control
 
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>           
-#include <sio/sioctl.h>           
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"           
+#include "sio/sioctl.h"           
+#include "sio/level0.h"
 
 /*-
 

@@ -10,8 +10,8 @@ FUNCTION NAME:  s_puts
 */
 
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 
 void s_puts(SIO *siop, char *str)

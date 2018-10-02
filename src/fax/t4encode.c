@@ -12,8 +12,8 @@ FUNCTION NAME:  t4encode
 */
 
 #include <stdio.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 #define START_TABLE encblack
 #define TERMINATING 63

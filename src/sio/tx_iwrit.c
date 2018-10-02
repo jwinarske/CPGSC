@@ -10,11 +10,11 @@ FUNCTION NAME: tx_iwrite
 */
 
 #include <stdio.h>               /*//*/
-#include <sio/siodef.h>          /*//*/
-#include <sio/misc.h>               /*//*/
-#include <sio/u16x50.h>          /* isr_tx prototype */
+#include "sio/siodef.h"          /*//*/
+#include "sio/misc.h"               /*//*/
+#include "sio/u16x50.h"          /* isr_tx prototype */
 #include <memory.h>              /* memcpy prototype */
-#include <sio/level0.h>         
+#include "sio/level0.h"         
 
 
 short tx_iwrite(SIO *siop, uint8_t *newbuff, short count)

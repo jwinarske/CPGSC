@@ -10,8 +10,8 @@ FUNCTION NAME:  x_rcvcksum
 */
 
 #include <stdio.h>                          /* Needed by modem.h                 */
-#include <sio/siodef.h>
-#include <sio/xmod.h>
+#include "sio/siodef.h"
+#include "sio/xmod.h"
 
 /*1: pointer to rcvpacket->data        */
 

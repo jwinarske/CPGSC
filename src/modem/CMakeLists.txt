@@ -22,4 +22,6 @@ set(sources
     m_wrndcd.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(modem STATIC ${sources})

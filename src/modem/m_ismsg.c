@@ -12,8 +12,8 @@ FUNCTION NAME:  m_ismessage
 
 #include <stdlib.h>
 #include <string.h>
-#include <sio/siodef.h>
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
 
 
 static struct parse_info m_result[] =

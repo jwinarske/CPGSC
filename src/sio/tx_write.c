@@ -7,8 +7,8 @@ FUNCTION NAME: tx_write
       RETURNS: 0 (always successful)
 */
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 short tx_write(SIO *siop, uint8_t *newbuff, short count)
 {

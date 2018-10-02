@@ -15,9 +15,9 @@ FUNCTION NAME:  m_hup
 
 #include <stdio.h>                               /*//*/
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/level0.h>                          /* for timing constants   */
-#include <sio/modem.h>
+#include "sio/siodef.h"
+#include "sio/level0.h"                          /* for timing constants   */
+#include "sio/modem.h"
 
 int m_hup(SIO *siop)
 {

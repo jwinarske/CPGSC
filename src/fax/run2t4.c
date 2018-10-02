@@ -7,8 +7,8 @@ PROGRAM NAME: RUN2T4
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 #define RUNBUFFSIZE  2048
 #define T4BUFFSIZE   RUNBUFFSIZE

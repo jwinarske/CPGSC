@@ -8,8 +8,8 @@ FUNCTION NAME:  s_restore
       RETURNS:  void
 */
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
 
 void s_restore(register SIO *siop)
 {

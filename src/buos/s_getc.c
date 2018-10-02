@@ -9,7 +9,7 @@ FUNCTION NAME:  s_getc
      COMMENTS:  Access to the port is through a pointer to an SIO structure.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 FAST s_getc(register SIO *siop)

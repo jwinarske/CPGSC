@@ -10,8 +10,8 @@ DESCRIPTION:  Converts a T.4 encode (1-Dimensional) input file to an
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 
 #define RUNBUFFSIZE  2048

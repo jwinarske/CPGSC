@@ -11,7 +11,7 @@ FUNCTION NAME:  getkbch
                 processing.  
 */
 
-#include <sio/key.h>
+#include "sio/key.h"
 
 #if defined(__GNUC__)
 

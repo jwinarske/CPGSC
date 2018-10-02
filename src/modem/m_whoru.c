@@ -15,9 +15,9 @@ FUNCTION NAME:  m_whoru
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/misc.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/misc.h"
 
 int m_whoru(SIO *siop)
 {

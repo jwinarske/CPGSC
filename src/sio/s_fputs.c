@@ -11,8 +11,8 @@ FUNCTION NAME:  s_fputs
 */
 
 #include <stdio.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 static void s_fflush(SIO *siop)
 {

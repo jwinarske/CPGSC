@@ -12,8 +12,8 @@ FUNCTION NAME:  setbaud
                 divisors, constants for which reside in SIODEF.H.
 */
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 short setbaud(SIO *siop, RANK rank)
 {

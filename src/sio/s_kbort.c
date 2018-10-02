@@ -14,8 +14,8 @@ FUNCTION NAME:  s_keybort
                 #define s_keybort(p) inkey() == (p)->s_octl->kbortc
 */
 
-#include <sio/siodef.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/key.h"
 
 
 bool s_keybort(SIO *siop)

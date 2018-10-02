@@ -10,8 +10,8 @@ FUNCTION NAME:  s_ircvstat
                 are equal.
 */
 
-#include <sio/siodef.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/level0.h"
 
 FAST s_ircvstat(SIO *siop)
 {

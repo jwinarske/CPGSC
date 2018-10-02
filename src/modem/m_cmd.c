@@ -14,9 +14,9 @@ FUNCTION NAME:  m_cmd
 
 #include <stdio.h>
 #include <string.h>
-#include <sio/siodef.h>
-#include <sio/modem.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/modem.h"
+#include "sio/sioctl.h"
 
 void m_cmd(SIO *siop, char *cmdstr)
 {

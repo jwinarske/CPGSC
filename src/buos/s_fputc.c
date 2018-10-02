@@ -19,11 +19,11 @@ FUNCTION NAME:  s_fputc
 
 #include <stdio.h>
 #include <ctype.h>
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
-#include <sio/ascii.h>
-#include <sio/buos.h>
-#include <sio/level0.h>        /* for timing constants */
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
+#include "sio/ascii.h"
+#include "sio/buos.h"
+#include "sio/level0.h"        /* for timing constants */
 
 /*
   Figure 15.7

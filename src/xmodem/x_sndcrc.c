@@ -13,9 +13,9 @@ FUNCTION NAME:  x_sndcrc
 */
 
 #include <stdio.h>                      /* Needed by modem.h                 */
-#include <sio/siodef.h>
-#include <sio/xmod.h>
-#include <sio/crc.h>
+#include "sio/siodef.h"
+#include "sio/xmod.h"
+#include "sio/crc.h"
 
 /*1: pointer to sndpacket->data        */
 uint16_t x_sndcrc(uint8_t *buff)

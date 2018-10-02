@@ -12,9 +12,9 @@ FUNCTION NAME:  x_rcvcrc
 */
 
 #include <stdio.h>                             /* Needed by modem.h                 */
-#include <sio/siodef.h>
-#include <sio/crc.h>
-#include <sio/xmod.h>
+#include "sio/siodef.h"
+#include "sio/crc.h"
+#include "sio/xmod.h"
 
 /*1: pointer to rcvpacket->data */
 

@@ -30,4 +30,6 @@ set(sources
     br2bcode.c
 )
 
+include_directories(${SIO_INC_DIR})
+
 add_library(sio STATIC ${sources})

@@ -7,8 +7,8 @@ DESCRIPTION:  Converts runlength file to 216-bytess per line bitmap.
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 #define NUMBITS  8
 #define WIDTH    NUMBITS/8

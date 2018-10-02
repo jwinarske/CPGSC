@@ -8,7 +8,7 @@
                 mk_ctctbl generates the correct table.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 uint16_t crctab[256] = {

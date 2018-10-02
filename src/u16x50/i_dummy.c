@@ -1,7 +1,7 @@
 /* Dummy ISRs to handle spurious interrupts */
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
 
 void isr_tx_dummy(SIO *siop)
 { /* No code: reading INT_ID clears a the interrupt */  } 

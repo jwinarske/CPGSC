@@ -11,7 +11,7 @@ FUNCTION NAME:  crchware
                 message.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 /*1: the generator polynomial          */
 /*2: accumulator                       */

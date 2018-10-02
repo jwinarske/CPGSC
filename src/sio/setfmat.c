@@ -9,8 +9,8 @@ FUNCTION NAME:  setformat
                 not supported.
 */
 
-#include <sio/siodef.h>
-#include <sio/buos.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"
 
 short setformat(SIO *siop, RANK whichone, RANK newval)
 {

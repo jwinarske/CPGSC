@@ -11,8 +11,8 @@ FUNCTION NAME: s_ocntrl
                arguments is not checked.
 */
 
-#include <sio/siodef.h>
-#include <sio/sioctl.h>
+#include "sio/siodef.h"
+#include "sio/sioctl.h"
 
 /* 2: SET or GET                        */
 /* 3: code for member to address        */

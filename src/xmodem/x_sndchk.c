@@ -8,8 +8,8 @@ FUNCTION NAME:  x_sndcksum
       RETURNS:  uint16_t
 */
 #include <stdio.h>                      /* Needed by modem.h                 */
-#include <sio/siodef.h>
-#include <sio/xmod.h>
+#include "sio/siodef.h"
+#include "sio/xmod.h"
 
 
 /*1: pointer to sndpacket->data   */

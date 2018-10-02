@@ -12,13 +12,13 @@ FUNCTION NAME: x_except
 
 #include <stdio.h>             /* Needed by modem.h    */
 #include <ctype.h>
-#include <sio/siodef.h>
-#include <sio/misc.h>
-#include <sio/ascii.h>
-#include <sio/xmod.h>
-#include <sio/level0.h>        /* for timing constants */
-#include <sio/buos.h>
-#include <sio/key.h>
+#include "sio/siodef.h"
+#include "sio/misc.h"
+#include "sio/ascii.h"
+#include "sio/xmod.h"
+#include "sio/level0.h"        /* for timing constants */
+#include "sio/buos.h"
+#include "sio/key.h"
 
 
 uint16_t x_except(SIO *siop, uint16_t exceptnum, uint16_t *ex_cntp, uint16_t maxexcept)

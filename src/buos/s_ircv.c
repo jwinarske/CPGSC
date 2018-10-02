@@ -1,10 +1,10 @@
 // This file contain receiver interrupt handler for all kinds of flow control.
 
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>           
-#include <sio/sioctl.h>           
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"           
+#include "sio/sioctl.h"           
+#include "sio/level0.h"
 
 
 /*
@@ -98,10 +98,10 @@ INCLUDE FILES:  stdlib.h, siodef.h, buos.h, sioctl.h, level0.h
 */
 
 #include <stdlib.h>
-#include <sio/siodef.h>
-#include <sio/buos.h>           
-#include <sio/sioctl.h>           
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/buos.h"           
+#include "sio/sioctl.h"           
+#include "sio/level0.h"
 
 FAST s_ircv(register SIO *siop)
 {

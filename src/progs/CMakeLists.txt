@@ -1,4 +1,6 @@
 
+include_directories(${SIO_INC_DIR})
+
 add_executable(term7 term7.c)
 
 target_link_libraries(term7

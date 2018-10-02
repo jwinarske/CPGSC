@@ -9,7 +9,7 @@ FUNCTION NAME: s_rcvstat
      COMMENTS:
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 FAST s_rcvstat(register SIO *siop)
 {

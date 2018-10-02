@@ -15,8 +15,8 @@ FUNCTION NAME:  vsetbr
                 the low uint8_t is passed before the high uint8_t.
 */
 
-#include <sio/siodef.h>
-#include <sio/uart.h>
+#include "sio/siodef.h"
+#include "sio/uart.h"
 
 int vsetbr(SIO *siop, struct vbaud_ *brp, RANK rank) /* rank of value to install  */
 {

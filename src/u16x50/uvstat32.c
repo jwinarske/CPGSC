@@ -17,7 +17,7 @@ FUNCTION NAME:  _vstat232
                      4          gpi1          gpi1
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 FAST _vstat232(register SIO *siop, struct vin232_ *p232)
 {

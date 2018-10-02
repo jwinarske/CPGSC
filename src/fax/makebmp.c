@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
-#include <sio/siolocal.h>
-#include <sio/t4.h>
+#include "sio/siolocal.h"
+#include "sio/t4.h"
 
 #define ALL_BLACK 	   0xFF
 #define ALL_WHITE 	   0x00

@@ -10,9 +10,9 @@ FUNCTION NAME: u_intrpt_mgr
                out.
 */
 
-#include <sio/siodef.h>
-#include <sio/u16x50.h>
-#include <sio/level0.h>
+#include "sio/siodef.h"
+#include "sio/u16x50.h"
+#include "sio/level0.h"
 
 
 void u_intrpt_mgr(SIO * siop, short int_wanted, bool state)

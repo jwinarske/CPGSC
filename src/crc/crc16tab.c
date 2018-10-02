@@ -8,7 +8,7 @@
                 the correct table is generated.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 
 uint16_t crc16tab[256] = {

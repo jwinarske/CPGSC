@@ -15,8 +15,8 @@ FUNCTION NAME:  vsetbits
                 function by the linked list of next pointers.
 */
 
-#include <sio/siodef.h>
-#include <sio/uart.h>
+#include "sio/siodef.h"
+#include "sio/uart.h"
 
 int vsetbits(SIO *siop, struct vregbits_ *rbp, RANK rank)
 {

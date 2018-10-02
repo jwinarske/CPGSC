@@ -8,7 +8,7 @@ FUNCTION NAME: s_txempty
       RETURNS: TRUE if transmitter shift register is empty.
 */
 
-#include <sio/siodef.h>
+#include "sio/siodef.h"
 
 FAST s_txempty(SIO *siop)
 {

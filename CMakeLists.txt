@@ -19,6 +19,8 @@ add_definitions(
     -Dfar=
     -Dnear=
     -Dfar=
+    -D_disable=
+    -D_enable=
 )
 
 if(NOT MSVC)
@@ -26,8 +28,6 @@ if(NOT MSVC)
         -D_interrrupt=
         -DINTPTR=
         -DNO_EOL_OUTPUT
-        -D_disable=
-        -D_enable=
     )
 
     #set(CMAKE_C_CFLAGS "${CMAKE_C_CFLAGS} -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections ")

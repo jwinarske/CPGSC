@@ -33,7 +33,7 @@ int main(void)
 
     /* Read bits, make run lengths, write run lengths */
     bytes_per_line = BYTES_PER_LINE;
-    for(lines = 1; count == bytes_per_line; lines++) {
+    for(lines = 1; count = bytes_per_line; lines++) {
 
         if (!fread(bitbuffp, sizeof(uint8_t), bytes_per_line, infilep)) {
 

@@ -26,7 +26,7 @@ short tx_ioff(SIO *siop, short mode)
             {;}         /* CAUTION: compiler optimizer may toss this! */
 
     u_intrpt_mgr(siop, THRE, OFF);               /* UART interrupt off */
-    (void*) s_revector(siop, THRE, siop->old_isr_tx); /* ... restore old handler */
+    s_revector(siop, THRE, siop->old_isr_tx); /* ... restore old handler */ /* (void*) */
     /* clean up heap */
     for (i = 0; i < siop->tx_numbuffs; ++i)    
         free(siop->tx_list[i].locbuff);              /* release the buffers.... */

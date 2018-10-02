@@ -48,7 +48,7 @@ int x_rcv(SIO *siop)
      uint16_t errcnt;                /* main exception counter     */
      uint16_t nosohtot;              /* special counter for soh timeouts  */
      RANK paritytmp, stoptmp, dltmp; /* to store current data format      */
-     if ( (rfp = wfopen("Name of file to receive", fnbuff)) == NIL)
+     if ( (rfp = wfopen("Name of file to receive", fnbuff, MAX_NAME_LEN)) == NIL)
           {
           if (*fnbuff)
                printf("Cannot open %s.\n",fnbuff);  /* input file         */
@@ -126,14 +126,14 @@ int x_rcv(SIO *siop)
                     errcode = x_except(siop, E_USRCAN, &errcnt, X_ERCVMAX);
                continue;
                }
-          for (i = 0, intp = (short *)rcvbuffp; i < paksize; i++)
+          for (i = 0, intp = (uint16_t *)rcvbuffp; i < paksize; i++)
                *intp++ = __s_waitch(siop, _0_SEC_1);  /*  rest of packet  */
           if (rcvbuffp->ckvhi == TIMEOUT)
                {
                errcode = x_except(siop, E_NODATA, &errcnt, X_ERCVMAX);
                continue;
                }
-          if ( (*r_errckp)(rcvbuffp->data) != 0)    /* bad checkvalue     */
+          if ( (*r_errckp)((uint16_t *)rcvbuffp->data) != 0)    /* bad checkvalue     */
                {
                errcode = x_except(siop, E_BADCKV, &errcnt, X_ERCVMAX);
                continue;

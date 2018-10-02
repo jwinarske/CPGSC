@@ -33,7 +33,7 @@ int run2bits(FILE *infilep, FILE *outfilep, uint8_t *bitbufp,
     register short mask = 0x01;
     space_left = bitbuf_len;
     accum = accum_len = 0;
-    while(num_read = fread(runbufp, sizeof(short), runbuffp, infilep))
+    while((num_read = fread(runbufp, sizeof(short), runbuffp, infilep)) > 0)
         {
         ++num_read;
          while (--num_read)

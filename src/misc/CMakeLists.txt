@@ -7,6 +7,7 @@ set(sources
     wfopen.c
     str_atoi.c
     haktc.c
+    fgets_wrapper.c
 )
 
 add_library(misc STATIC ${sources})

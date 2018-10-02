@@ -41,7 +41,7 @@ int x_snd(SIO *siop)
      int  errcode;
      uint16_t  errcnt;
      RANK paritytmp, stoptmp, dltmp; /* to store current data format */
-     if ( (sfp = rfopen("Name for file to transmit", fnbuff)) == NIL)
+     if ( (sfp = rfopen("Name for file to transmit", fnbuff, MAX_NAME_LEN)) == NIL)
           {
           printf("Cannot open %s.\n", fnbuff);        /* input file  */
           return 1;

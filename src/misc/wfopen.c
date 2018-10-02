@@ -14,32 +14,35 @@ FUNCTION NAME:  wfopen
 
 #include  <stdio.h>
 #include  <sio/siodef.h>
+#include  <sio/misc.h>
 #include  <ctype.h>
 #include  <string.h>
 
-#ifndef gets
-extern char *gets(char *buffer);
-#endif
 
 /* 1: user prompt string           */
 /* 2: file name buffer             */
 
-FILE *wfopen(char *promptstr, char *fnbuff)
+FILE *wfopen(char *promptstr, char *fnbuff, size_t bufflen)
 {
-     FILE *wfp;
-     char locbuff[10];
-     for (EVER)
-          {
-          printf("\n%s: ",promptstr);
-          gets(fnbuff);
-          if (strcmp(fnbuff,"") == 0)
-               return NIL;
-          fclose(wfp = fopen(fnbuff, "rb"));      /* open it for reading      */
-          if (wfp == NIL)                        /* doesn't already exist    */
-               return (fopen(fnbuff, "wb"));
-          printf("\n%s already exists. Overwrite\a?  ", fnbuff);
-          gets(locbuff);
-          if (toupper(locbuff[0]) == 'Y')
-               return (fopen(fnbuff, "wb"));
-          }
+    FILE *wfp;
+    char locbuff[10];
+
+    for (EVER) {
+
+        printf("\n%s: ",promptstr);
+        fgets_wrapper(fnbuff, bufflen, stdin);
+
+        if (strcmp(fnbuff,"") == 0)
+            return NIL;
+
+        fclose(wfp = fopen(fnbuff, "rb"));      /* open it for reading      */
+        if (wfp == NIL)                        /* doesn't already exist    */
+            return (fopen(fnbuff, "wb"));
+
+        printf("\n%s already exists. Overwrite\a?  ", fnbuff);
+        fgets_wrapper(locbuff, 10, stdin);
+
+        if (toupper(locbuff[0]) == 'Y')
+            return (fopen(fnbuff, "wb"));
+    }
 }

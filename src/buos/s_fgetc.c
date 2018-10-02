@@ -29,7 +29,7 @@ FUNCTION NAME:  s_fgetc
 int s_fgetc(SIO *siop)
 {
     register struct sictl_ *ip;        /* registers and statics for speed   */
-    static int retuint8_t, i, c;
+    static int retbyte, i, c;
     static bool rxflag;
     if (siop->s_ictl->rawflag)               /* do raw processing asap       */
         return s_inchar(siop);
@@ -44,7 +44,7 @@ int s_fgetc(SIO *siop)
     c = (ip->t_outflag)  ?  __s_waitch(siop, ip->t_out)  :  s_inchar(siop);
     if (c == TIMEOUT)
         return TIMEOUT;
-    retuint8_t  = -1;                          /* postpone initialization      */
+    retbyte  = -1;                          /* postpone initialization      */
     rxflag   = TRUE;
     if (ip->ekobakflag)                      /* -- ECHO TO SENDER -- */
         s_putc(siop, c);
@@ -83,48 +83,49 @@ int s_fgetc(SIO *siop)
                 break;
             case LF2CR:                   /*           lf->cr             */
                 if (c == LF)
-                        retuint8_t = CR;
+                        retbyte = CR;
                 break;
             case CR2LF:                   /*           cr->lf             */
                 if ( c == CR)
-                        retuint8_t = LF;
+                        retbyte = LF;
                 break;
             case EOL2SPACE:               /* cr & lf converted to spaces  */
-                if (c == CR || c == LF)  /*   crlf = one space           */
-                        if (c != LF && ip->lastc != CR)
-                            rxflag = FALSE;
-                        else
-                            retuint8_t = SP;
+                if (c == CR || c == LF) { /*   crlf = one space           */
+                    if (c != LF && ip->lastc != CR) {
+                        rxflag = FALSE;
+                    }
+                    else {
+                        retbyte = SP;
+                    }
+                }
                 break;
             case REMOVEEOL:               /*   cr and lf not transmitted  */
                 if (c == CR || c == LF)
                         rxflag = FALSE;
                 break;
             case LF2CRLF:                 /*          lf -> crlf          */
-                if (c == LF)
-                        {
-                        ip->rbakflag = TRUE;
-                        ip->rbakc   = LF;
-                        retuint8_t     = CR;
-                        }
+                if (c == LF) {
+                    ip->rbakflag = TRUE;
+                    ip->rbakc   = LF;
+                    retbyte     = CR;
+                }
                 break;
             case CR2CRLF:                 /*           cr->crlf           */
-                if (c == CR)
-                        {
-                        ip->rbakflag = TRUE;
-                        ip->rbakc   = LF;
-                        }
+                if (c == CR) {
+                    ip->rbakflag = TRUE;
+                    ip->rbakc   = LF;
+                }
                 break;
             case CRLF2LF:                 /*           crlf -> lf         */
                 if ( c == CR && ip->lastc != CR)
                         rxflag = FALSE;                    else
-                        retuint8_t = (ip->lastc == CR) ? LF : CR;
+                        retbyte = (ip->lastc == CR) ? LF : CR;
                 break;
             case CRLF2CR:                 /*            crlf -> cr        */
                 if ( c == CR && ip->lastc != CR)
                         rxflag = FALSE;
                 else
-                        retuint8_t = CR;
+                        retbyte = CR;
                 break;
             default:
                 break;
@@ -143,8 +144,8 @@ int s_fgetc(SIO *siop)
                 break;
             }
     ip->lastc = c;                          /*     save this character      */
-    if (retuint8_t != -1)            /* if uint8_t to return is not uint8_t received */
-        c = retuint8_t;
+    if (retbyte != -1)            /* if uint8_t to return is not uint8_t received */
+        c = retbyte;
     if ( ip->consflag && rxflag)
         putchar(c);
     return (rxflag ? c : IGNORE);

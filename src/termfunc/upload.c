@@ -15,12 +15,12 @@ FUNCTION NAME: upload
 
 void upload(SIO *siop)
 {
-     FILE *rfopen(), *xmitfp;                /* return type declarations     */
+     FILE *xmitfp;                /* return type declarations     */
      char fnbuff[MAX_NAME_LEN];
      int c;
      int errflag = 0;
      putchar('\n');                          /* now open file, return *FILE  */
-     if ( (xmitfp = rfopen("Name of file to upload", fnbuff)) == NIL)
+     if ( (xmitfp = rfopen("Name of file to upload", fnbuff, MAX_NAME_LEN)) == NIL)
           return;                            /* user terminated upload       */
      s_opush(siop);                          /* save output structure_       */
 //     s_ocntrl(siop, SET, IB_DLY, _0_SEC_1);/* interuint8_t delay of .1 secs   */

@@ -62,7 +62,6 @@ FUNCTION NAME:  __delay
      COMMENTS:  The system interval is defined as 1 Tsec (about 50 msecs).
 */
 
-
 void __delay(unsigned tsecs)
 {
      unsigned volatile tickref;
@@ -84,8 +83,6 @@ FUNCTION NAME:  __s_waitch
      COMMENTS:  The system timing interval is defined as a  "Tsec," or
                 about 50 msec.
 */
-
-
 
 int __s_waitch(register SIO *siop, unsigned tsecs)
 {

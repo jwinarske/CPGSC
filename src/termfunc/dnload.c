@@ -24,7 +24,7 @@ void dnload(SIO *siop, int (*captfp)(SIO *, FILE *) )
      char   fnbuff[MAX_NAME_LEN];        /* filename buffer                   */
      int    errflag;                     /* inbound uint8, counter, I/O error  */
      bytetot = 0;
-     if ( (rcvfp = wfopen("File name for downloaded file", fnbuff)) == NIL)
+     if ( (rcvfp = wfopen("File name for downloaded file", fnbuff, MAX_NAME_LEN)) == NIL)
           {
           puts("Input file not opened.");
           return;

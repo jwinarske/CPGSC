@@ -28,7 +28,7 @@ int t4decode(FILE *t4file, FILE *runfile, short *runbufp,
      memset(runbufp, 0, runbuff_len * sizeof(short));
      curr_node = eoltree;
 
-     while (t4_read = fread(t4bufp, sizeof(FAST), t4_len, t4file))
+     while ((t4_read = fread(t4bufp, sizeof(FAST), t4_len, t4file)) > 0)
           {
           ++t4_read;                  
           while (--t4_read)

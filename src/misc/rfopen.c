@@ -13,30 +13,33 @@ FUNCTION NAME:  rfopen
 
 #include  <stdio.h>
 #include  <sio/siodef.h>
+#include  <sio/misc.h>
 #include  <errno.h>
 #include  <string.h>
 
-#ifndef gets
-extern char *gets(char *buffer);
-#endif
 
 /* 1: user prompt string           */
 /* 2: file name buffer             */
 
-FILE *rfopen(char *promptstr, char *fnbuff)
+FILE *rfopen(char *promptstr, char *fnbuff, size_t bufflen)
 {
-     FILE *rfp;
-     do
-          {
-          printf("\n%s: ",promptstr);
-          gets(fnbuff);
-          if (strcmp(fnbuff,"") == 0)        /* user typed CR to exit        */
-               return NIL;
-          if ( (rfp = fopen(fnbuff, "rb")) == NIL)        /* open failure     */
-               if (errno == ENOENT)
-                    printf("%s not found.", fnbuff);
-               else
-                    printf("\nOpen error on %s.", fnbuff);  /* error message */
-          } while (rfp == NIL);                   /* repeat until open succeeds   */
-     return rfp;
+    FILE *rfp;
+    do {
+        printf("\n%s: ",promptstr);
+        fgets_wrapper(fnbuff, bufflen, stdin);
+
+        if (strcmp(fnbuff,"") == 0)        /* user typed CR to exit        */
+            return NIL;
+
+        if ( (rfp = fopen(fnbuff, "rb")) == NIL) {       /* open failure     */
+            if (errno == ENOENT) {
+                printf("%s not found.", fnbuff);
+            }
+            else {
+                printf("\nOpen error on %s.", fnbuff);  /* error message */
+            }
+        }
+    } while (rfp == NIL);                   /* repeat until open succeeds   */
+
+    return rfp;
 }

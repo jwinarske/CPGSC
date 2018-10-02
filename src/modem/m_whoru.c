@@ -27,7 +27,7 @@ int m_whoru(SIO *siop)
      puts("Entering M_WHORU");              /*//*/
      set232(siop, DTR, ON);
      m_cmd_str(siop, "I0", id_string, MAX_MSG_LEN);  /* get ID  */
-     if (id_string == NIL)
+     if (&id_string[0] == 0)
         return M_FAIL;
      id_string[2] = NUL;                    /* First two characters      */
      switch (str_atoi(id_string))           /* Convert string to integer */

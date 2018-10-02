@@ -8,23 +8,21 @@ FUNCTION NAME:  dial and redial
 #include <stdio.h>
 #include <sio/siodef.h>
 #include <sio/modem.h>
+#include <sio/misc.h>
 
-#ifndef gets
-extern char *gets(char *buffer);
-#endif
 
 int dial(SIO *siop)
 {
-     extern char *m_codes[];
-     int result;
-     char numbuff[CMDBUFSIZ +1];
-     printf("\nEnter phone number:  ");
-     gets(numbuff);
-     result = m_dial(siop, numbuff);
+    extern char *m_codes[];
+    int result;
+    char numbuff[CMDBUFSIZ +1];
+    printf("\nEnter phone number:  ");
+    fgets_wrapper(numbuff, CMDBUFSIZ +1, stdin);     
+    result = m_dial(siop, numbuff);
 #ifdef DEBUG_MODEM
-     printf("DIAL: %s.  (%d)\n",m_codes[result], result);
+    printf("DIAL: %s.  (%d)\n",m_codes[result], result);
 #endif
-     return result;
+    return result;
 }
 
 int redial(SIO *siop)

@@ -281,17 +281,22 @@ SIO *siop;
     for (EVER) {                           /*         eternal loop         */
 
         s_fgetc(siop);                     /* s_fgetc will echo            */
-        if ( (c = inkey()) != NOT_READY)
-               if (c == MENU)
-                    {
-                    if (menu(siop))
-                         break;          /* if menu returns non-zero         */
-                    }
-               else
-                    s_fputc(siop, c);
-          if(serial_status(siop, BREAK_ON))
-               puts("Break Detected");
-          }
+        if ( (c = inkey()) != NOT_READY) {
+
+            if (c == MENU) {
+
+                if (menu(siop)) {
+                        break;          /* if menu returns non-zero         */
+                }
+            }
+            else {
+                s_fputc(siop, c);
+            }
+            
+            if(serial_status(siop, BREAK_ON))
+                puts("Break Detected");
+            }
+        }
      s_opop(siop);                      /* restore both control structures   */
      s_ipop(siop);
      m_unconfig(siop);

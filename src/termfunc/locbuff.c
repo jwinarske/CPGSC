@@ -38,7 +38,7 @@ int locbuff(SIO *siop, FILE *rcvfp)
           }
      s_ipush(siop);
      bufflen = numblks * BLKSIZE;       /* now convert from blocks to bytes  */
-     pausep = (char *)(buff + (bufflen - BYTESLEFT)); /* flow-off point */
+     pausep = (uint8_t *)(buff + (bufflen - BYTESLEFT)); /* flow-off point */
      printf("%lu byte local buffer in use.\n",bufflen);
      for (EVER)
           {

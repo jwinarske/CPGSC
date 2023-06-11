@@ -38,7 +38,7 @@ int t4decode(FILE *t4file, FILE *runfile, short *runbufp,
                ++numbits;             
                while (--numbits)      /* For every bit */                 
                     {                 
-//                  curr_node = *((T4NODE **)curr_node + (t4_code & 1)); /*//*/
+//                  curr_node = *((T4NODE **)curr_node + (t4_code & 1));
                     curr_node = t4_code & 1 ? curr_node->one :  curr_node->zero;
                     if (curr_node->run_len != NOTTERMINAL) /* complete code */
                          {                              
@@ -71,4 +71,3 @@ int t4decode(FILE *t4file, FILE *runfile, short *runbufp,
 EXIT:
      return errcode;
 }
-

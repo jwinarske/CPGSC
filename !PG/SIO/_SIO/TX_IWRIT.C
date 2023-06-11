@@ -9,9 +9,9 @@ FUNCTION NAME: tx_iwrite
                than the local buffer.
 */
 
-#include <stdio.h>               /*//*/
-#include <sio\siodef.h>          /*//*/
-#include <sio\misc.h>               /*//*/
+#include <stdio.h>
+#include <sio\siodef.h>
+#include <sio\misc.h>
 #include <sio\U16x50.H>          /* isr_tx prototype */
 #include <memory.h>              /* memcpy prototype */
 #include <sio\level0.h>         
@@ -38,4 +38,3 @@ short tx_iwrite(SIO *siop, BYTE *newbuff, short count)
           }
      return Q_OK;
 }
-

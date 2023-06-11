@@ -11,7 +11,7 @@ FUNCTION NAME:  m_config
                 only some.  Note that sec_config must be sent first.
 */
 
-#include <stdio.h>  /*//*/
+#include <stdio.h>
 #include <stdlib.h>
 #include <sio\siodef.h>
 #include <string.h>
@@ -23,7 +23,7 @@ int m_config(SIO *siop)
      struct modem *smp = siop->sm;
      int errcode = M_SUCCEED;
      char *pri_config, *sec_config;
-     puts("Entering M_CONFIG");         /*//*/
+     puts("Entering M_CONFIG");
      strcpy(smp->okalpha, ",*#()-R");        /* chars common to all          */
      if ( (pri_config = (char *)malloc(CMDBUFSIZ)) == NIL)
           return M_CONFIG_MEM;
@@ -62,12 +62,12 @@ int m_config(SIO *siop)
 
      errcode |= m_cmd_OK(siop, sec_config);       /* Send secondary first!   */
      free(sec_config);
-//     printf("~!m_config: %d-Byte sec-config sent at %d, errcode =  %s\n",strlen(pri_config), getbaud(siop),errcode ?"FAIL":"OK"); /*//*/
-//     printf("m_config: sec_config: %s\n", sec_config);      /*//*/
+//     printf("~!m_config: %d-Byte sec-config sent at %d, errcode =  %s\n",strlen(pri_config), getbaud(siop),errcode ?"FAIL":"OK");
+//     printf("m_config: sec_config: %s\n", sec_config);
      errcode |= m_cmd_OK(siop, pri_config);
      free(pri_config);
-//     printf("m_config: %d-Byte Pri-config sent at %d, errcode =  %s\n",strlen(pri_config), getbaud(siop),errcode ?"FAIL":"OK");   /*//*/
-//     printf("m_config: pri_config: %s\n", pri_config);      /*//*/
+//     printf("m_config: %d-Byte Pri-config sent at %d, errcode =  %s\n",strlen(pri_config), getbaud(siop),errcode ?"FAIL":"OK");
+//     printf("m_config: pri_config: %s\n", pri_config);
 
      switch (smp->baudmode)                  /* set baud rate                */
           {
@@ -83,11 +83,10 @@ int m_config(SIO *siop)
      if (errcode == M_SUCCEED)
           smp->configokflag = TRUE;          /* broadcast init               */
      set232(siop, DTR, OFF);  /* inhibit DTR                  */
-//     printf("m_config: Final AT sent at %d; exiting with errcode = %s\n", getbaud(siop),errcode ?"FAIL":"OK");/*//*/
+//     printf("m_config: Final AT sent at %d; exiting with errcode = %s\n", getbaud(siop),errcode ?"FAIL":"OK");
      s_opop(siop);
      if (errcode != M_SUCCEED)
           errcode = M_CONFIG_NOK;
-//     puts("Exiting M_CONFIG");       /*//*/
+//     puts("Exiting M_CONFIG");
      return errcode;                         /* return 0 if "OK"             */
 }
-

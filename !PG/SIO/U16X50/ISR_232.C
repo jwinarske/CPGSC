@@ -39,4 +39,3 @@ void isr_stat232(register SIO* siop)
      siop->ri ->now =  (stat_reg >> 6) &1;
      siop->dcd->now = (stat_reg >> 7) &1;    /* bit 7 */
 }
-

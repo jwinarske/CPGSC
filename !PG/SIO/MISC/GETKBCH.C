@@ -37,7 +37,6 @@ FUNCTION NAME:  inkey
 
 FAST inkey(void)
 {
-     return ( (keystat() == NO_KEY) ? NOT_READY : getkey() );  /*//*/
+     return ( (keystat() == NO_KEY) ? NOT_READY : getkey() );
 //     return ( (kbhit()== NO_KEY) ? NOT_READY : getch() );
 }
-

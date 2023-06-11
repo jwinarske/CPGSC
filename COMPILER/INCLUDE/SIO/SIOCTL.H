@@ -92,4 +92,3 @@ enum ctlargs
     };
 
 #endif		/* _SIOCTL_ */
-

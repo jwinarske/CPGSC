@@ -13,4 +13,3 @@ FAST s_rcv(register SIO *siop)
 {
      return ( (*siop->readbyte)(siop->uart_base + siop->data_off));
 }
-

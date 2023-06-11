@@ -17,4 +17,3 @@ void _vsetbits(register SIO *siop, struct vregbits_ *brp, REG binval)
 {
      (*siop->writebyte)(siop->uart_base + brp->offset, (FAST) binval);
 }
-

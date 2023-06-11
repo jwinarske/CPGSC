@@ -39,7 +39,7 @@ short tx_ion(SIO *siop, short numbuffs, short bufflen)
      siop->tx_list = (struct tx_queue *) malloc(Q_SIZE);
      for (i = 0; i < numbuffs; ++i)             /* initialize queue */
           {
-          siop->tx_list[i].id        = i;         /*//*/
+          siop->tx_list[i].id        = i;
           siop->tx_list[i].locbuff   = (char *) malloc(siop->tx_buffsize);
           siop->tx_list[i].buffp     = siop->tx_list[i].locbuff;
           siop->tx_list[i].inuseflag = TX_FREE;
@@ -72,4 +72,3 @@ short tx_ion(SIO *siop, short numbuffs, short bufflen)
      __sys_enable();
      return ON;
 }
-

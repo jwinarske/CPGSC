@@ -19,4 +19,3 @@ FAST s_getc(register SIO *siop)
           {;}
      return ((*siop->s_read)(siop));         /* read and return it           */
 }
-

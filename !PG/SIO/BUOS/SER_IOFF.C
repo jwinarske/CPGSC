@@ -17,4 +17,3 @@ short serr_ioff(SIO *siop)
      u_intrpt_mgr(siop, SERERR, OFF);                /* UART interrupt on */
      return OFF;
 }
-

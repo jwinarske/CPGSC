@@ -220,4 +220,3 @@ $(OBJ_PATH)\M_WRNDCD.OBJ:  $(SRC_PATH)\M_WRNDCD.C \
               $(compile)
               $(NLIB)
 
-

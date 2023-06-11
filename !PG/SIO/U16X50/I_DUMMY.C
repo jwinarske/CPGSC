@@ -15,4 +15,3 @@ void isr_stat232_dummy(SIO *siop)
 void isr_rcv_dummy(SIO *siop)
 {     (*siop->readbyte)(siop->uart_base + DATA_IO);     }
 
-

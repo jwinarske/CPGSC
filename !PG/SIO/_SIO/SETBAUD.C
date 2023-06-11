@@ -19,4 +19,3 @@ short setbaud(SIO *siop, RANK rank)
 {
      return (vsetbr(siop, siop->br, rank));
 }
-

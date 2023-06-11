@@ -167,4 +167,3 @@ $(OBJ_PATH)\RUN2BITS.OBJ:  $(SRC_PATH)\RUN2BITS.C \
 RUN2BMP.EXE:  $(LIBNAME)\
                $(OBJ_PATH)\RUN2BMP.OBJ
                 link $(OBJ_PATH)\RUN2BMP,,NUL,$(LIBNAME);
-

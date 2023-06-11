@@ -186,4 +186,3 @@ int x_rcv(SIO *siop)
      puts("\nEnd of X-Receive");
      return (errcode == E_RCVOK ? 0 : 1);   /* return success or fail  */
 }
-

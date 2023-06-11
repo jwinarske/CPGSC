@@ -67,4 +67,3 @@ int cbuff(SIO *siop, FILE *rcvfp)
      s_ipop(siop);
      return error;                    /* return 0 if no error, 1 if error  */
 }
-	

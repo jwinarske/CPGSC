@@ -33,4 +33,3 @@ short getformat(SIO *siop, RANK whichone)
           }
      return retval;
 }
-

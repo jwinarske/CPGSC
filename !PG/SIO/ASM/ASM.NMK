@@ -34,4 +34,3 @@ MASM=MASM $(*B),.\objs\$(*B),$(*B).lst, $(ASM_FLAGS);
 $(OBJ_PATH)\CPGSC.OBJ: CPGSC.ASM CPGSC.MAC COM1ISR.ASM COM2ISR.ASM COM3ISR.ASM COM4ISR.ASM
                 $(MASM)
                 $(NLIB)
-

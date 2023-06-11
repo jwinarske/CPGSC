@@ -13,7 +13,7 @@ FUNCTION NAME:  m_hup
                 force hangup.
 */
 
-#include <stdio.h>                               /*//*/
+#include <stdio.h>
 #include <stdlib.h>
 #include <sio\siodef.h>
 #include <sio\level0.h>                          /* for timing constants   */
@@ -32,9 +32,8 @@ int m_hup(SIO *siop)
          errcode = m_cmd_OK(siop, "H0");         /* send hangup  cmd       */
          siop->sm->cmdt_out = time_tmp;          /* restore normal timeout */
          }
-//    printf ("M_HUP: errcode = %d\n",errcode);      /*//*/
+//    printf ("M_HUP: errcode = %d\n",errcode);
     set232(siop, DTR, OFF);
     __delay(_0_SEC_3);
     return errcode;
 }
-

@@ -27,4 +27,3 @@ USHORT x_rcvcrc(USHORT *data)
      printf("CRC = %d ", accum);
      return accum;                            /* zero if no errors         */
 }
-

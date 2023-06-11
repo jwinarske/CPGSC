@@ -46,4 +46,3 @@ int s_ipop(SIO *siop)
      free((VOID*)*istackp);
      return 0;
 }
-

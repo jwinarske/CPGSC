@@ -19,4 +19,3 @@ short serr_ion(SIO *siop)
      u_intrpt_mgr(siop, SERERR, ON);                 /* UART interrupt on */
      return ON;
 }
-

@@ -38,4 +38,3 @@ char *bigbuff(USHORT blksize, USHORT headroom, USHORT *numblkp)
      *numblkp = nblks;                       /* pass back to caller          */
      return (malloc(nblks * blksize));      /* allocate & return the pointer */
 }
-

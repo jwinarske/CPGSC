@@ -60,13 +60,13 @@ M_NOTONE,          /*5  No dial tone heard                          */
 M_BUSY,            /*6  Busy signal heard                           */
 M_NOANSW,          /*7  Silence not heard after @                   */
 M_BADMSG,          /*8  Invalid modem response                      */
-M_NORING,          /*9  Looked for and didn't hear incoming'RING'   */
+M_NORING,          /*9  Looked for and didn't hear incoming "RING"  */
 M_ONLINE,          /*10 Can't dial into a high dcd                  */
 M_NILNUM,          /*11 Blank dial string                           */
 M_USRCAN,          /*12 Call cancelled from keyboard                */
 M_NORESET,         /*13 Reset Failed                                */
 M_NOID,            /*14 ID function failed                          */
-M_CONFIG_MEM,      /*15 Configuration memeory alloc error           */
+M_CONFIG_MEM,      /*15 Configuration memory alloc error           */
 M_CONFIG_NOK,      /*16 Modem didn't configure as requested         */
 M_DCD_HIGH,        /*17 DCD went high (not a message)               */
 M_PROTOCOL,        /*18 Protocol message detected during connect    */
@@ -80,7 +80,7 @@ enum baudcnfg {  BAUD_MAX = 0, BAUD_FOUND};
 
 struct modem
    {
-   unsigned ibdelay;              /*0  Interbyte delay                     */
+   unsigned ibdelay;              /*0  Inter-byte delay                     */
    BOOL     cmdechoflag;          /*1  Modem commands to console           */
    char     cmdbuff[CMDBUFSIZ];   /*2  Build all commands here             */
    int      cmdt_out;             /*3  Tsecs to wait after a modem cmd     */
@@ -91,7 +91,7 @@ struct modem
    unsigned max_DTE_baud;         /*8  Maximum baud rate of modem          */
    short    modtype;              /*9  Our code for modem                  */
    short    max_carrier_speed;    /*10 Maximum baud rate of modem          */
-   short    autoans_arg;          /*11 (S0)# of rings before autoanswer    */
+   short    autoans_arg;          /*11 (S0)# of rings before auto answer   */
    short    dtwait_arg;           /*12 (S6)dialtone wait (secs)            */
    short    dcdwait_arg;          /*13 (S7)# secs to wait for carrier      */
    short    speaker_arg;          /*14 Speaker mode                        */
@@ -132,4 +132,3 @@ struct parse_info
      };
 
 #endif      /*_MODEM_ */
-

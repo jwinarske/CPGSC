@@ -39,4 +39,3 @@ FILE *wfopen(char *promptstr, char *fnbuff)
                return (fopen(fnbuff, "wb"));
           }
 }
-

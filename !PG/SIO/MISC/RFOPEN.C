@@ -36,4 +36,3 @@ FILE *rfopen(char *promptstr, char *fnbuff)
           } while (rfp == NIL);                   /* repeat until open succeeds   */
      return rfp;
 }
-

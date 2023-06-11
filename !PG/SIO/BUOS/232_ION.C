@@ -21,4 +21,3 @@ short rs232_ion(SIO *siop)
      return ON;
 }
 
-

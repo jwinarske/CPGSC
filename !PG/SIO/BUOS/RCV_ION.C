@@ -37,4 +37,3 @@ short rcv_ion(SIO *siop)
      u_intrpt_mgr(siop, RXRDY, ON);                  /* UART interrupt on */
   	 return ON;
 }
-

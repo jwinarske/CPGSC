@@ -35,4 +35,3 @@ int m_gocmd(SIO *siop, int escchar)
      s_ipop(siop);
      return (errcode == M_SUCCEED) ? M_SUCCEED : M_FAIL;
 }
-

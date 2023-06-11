@@ -32,13 +32,13 @@ int m_dial(SIO *siop, char  phonenum[])
           } while( *++phonenum != NUL );
      *dbp = '\0';                            /* terminate  buffer            */
      sprintf(dialstr,"D%c%s%c",smp->dialmode, smp->dialbuff, smp->enddial);
-     printf("Dial string is %s\n",dialstr);  /*//*/
+     printf("Dial string is %s\n",dialstr);
      if (strlen(smp->dialbuff) == 0)         /* exit if string is NIL        */
           return M_NILNUM;
      set232(siop, DTR, ON);
      m_cmd(siop, dialstr);                   /* output command to SIO        */
      resultcode = m_wait4dcd(siop);          /* go wait for carrier          */
-//     printf("M_DIAL: resultcode = %d\n", resultcode);  /*//*/
+//     printf("M_DIAL: resultcode = %d\n", resultcode);
 
      switch (resultcode)
           {
@@ -56,4 +56,3 @@ int m_dial(SIO *siop, char  phonenum[])
           }
      return resultcode;                      /* exit with DTR still high     */
 }
-

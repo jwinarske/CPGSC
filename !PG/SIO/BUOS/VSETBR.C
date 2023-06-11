@@ -45,4 +45,3 @@ int vsetbr(SIO *siop, struct vbaud_ *brp, RANK rank) /* rank of value to install
      ..
 }
 #endif
-

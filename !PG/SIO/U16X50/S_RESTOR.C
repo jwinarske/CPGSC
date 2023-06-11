@@ -20,4 +20,3 @@ void s_restore(register SIO *siop)
      (*siop->writebyte)(siop->uart_base + OUT232, siop->v_regp[VOUT232][USR]);
      (*siop->writebyte)(siop->uart_base + FIFO, siop->v_regp[VFIFO][USR]);
 }
-

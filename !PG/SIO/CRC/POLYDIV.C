@@ -26,4 +26,3 @@ USHORT polydiv(USHORT data, USHORT divisor, USHORT remainder)
           }
      return remainder;
 }
-

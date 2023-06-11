@@ -62,4 +62,3 @@ short set232(SIO* siop, RANK whichone, BOOL state)
             }
      return retval;
 }
-

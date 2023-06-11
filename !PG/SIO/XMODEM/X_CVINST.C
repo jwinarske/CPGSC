@@ -29,4 +29,3 @@ void ckvinstall
      for (; numpaks > 0; --numpaks, ++pbp)
           pbp->ckval = (*ckvfn)(pbp->data);
 }
-

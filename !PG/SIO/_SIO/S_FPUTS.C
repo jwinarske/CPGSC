@@ -28,4 +28,3 @@ void s_fputs(SIO *siop, char *str)
      if (siop->s_octl->consflag == TRUE)
           putchar('\n');
 }
-

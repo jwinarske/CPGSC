@@ -17,4 +17,3 @@ short s_write(SIO *siop, BYTE *newbuff, short count)
 {
      return (*siop->s_txblock)(siop, newbuff, count);
 }
-

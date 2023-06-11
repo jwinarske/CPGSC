@@ -22,4 +22,3 @@ short m_getstr(SIO *siop, char * replybuff, short numc)
      s_ipop(siop);
      return numc;
 }
-

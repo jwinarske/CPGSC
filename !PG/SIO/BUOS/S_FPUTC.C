@@ -190,4 +190,3 @@ int s_fputc(SIO *siop, FAST c)
      op->lastc = c;                          /*     save this character      */
      return 0;
 }
-

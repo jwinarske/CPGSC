@@ -54,4 +54,3 @@ void dnload(SIO *siop, int (*captfp)(SIO *, FILE *) )
      s_ipop(siop);                       /* restore control structure         */
      puts("Exiting download");
 }
-

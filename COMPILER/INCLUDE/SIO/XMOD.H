@@ -84,4 +84,3 @@ enum xrcvcodes                  /* CODES USED ONLY IN X_RCV                  */
      E_RCVOK                    /* successful reception                      */
      };
 #endif    /* _XMOD_ */
-

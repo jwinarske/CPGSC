@@ -53,9 +53,8 @@ typedef void (_interrupt far  *INTPTR)();
 #define NEAR_NULL ( (void near *) 0 )  /* near NULL                      */
 #endif
 
-#define DUMMYC NUL                     /* use for dummy arugments        */
+#define DUMMYC NUL                     /* use for dummy arguments        */
 #define DUMMYI 0
 #define DUMMYP NULLDP
 #define DUMMYL 0L
 #endif   /* _SIOLOCAL_ */
-

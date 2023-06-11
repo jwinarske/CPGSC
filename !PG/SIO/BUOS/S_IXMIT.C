@@ -20,4 +20,3 @@ void s_ixmit(register SIO *siop, FAST c)
      while (tx_iwrite(siop, (BYTE*)&c, 1) != Q_OK)
           {;} 
 }
-

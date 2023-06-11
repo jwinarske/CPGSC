@@ -48,4 +48,3 @@ int s_opop(SIO *siop)
      free((VOID*) *ostackp);                    /* release allocated memory          */
      return 0;
 }
-

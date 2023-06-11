@@ -18,4 +18,3 @@ USHORT  polydiv(USHORT, USHORT, USHORT);
 #define  crcupdate16(d,a,t) *(a)=((*(a)>>8) ^ (t)[(*(a) ^ (d)) &0x00ff])*/
 
 #endif   /* _CRC_ */
-

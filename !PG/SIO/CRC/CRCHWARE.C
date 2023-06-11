@@ -31,4 +31,3 @@ USHORT crchware(USHORT data,  USHORT genpoly,  USHORT accum)
           }
      return accum;
 }
-

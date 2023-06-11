@@ -14,4 +14,3 @@ FAST s_txempty(SIO *siop)
 {
      return ( (*siop->readbyte)(siop->uart_base + siop->status_off) & siop->tx_emptymask);
 }
-

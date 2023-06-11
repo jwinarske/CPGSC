@@ -22,4 +22,3 @@ BOOL s_keybort(SIO *siop)
 {
      return (BOOL) (inkey() == (int)siop->s_octl->kbortc);
 }
-

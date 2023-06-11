@@ -37,4 +37,3 @@ int vsetbits(SIO *siop, struct vregbits_ *rbp, RANK rank)
           } while (rbp != NIL);         /* no, done                          */
      return 0;
 }
-

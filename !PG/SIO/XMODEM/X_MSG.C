@@ -31,4 +31,3 @@ char *x_msg[] =
      "Fatal error writing disk.",                         /* E_DSKWRITE 17 */
      "Successful reception."                              /* E_RCVOK    18 */
      };
-

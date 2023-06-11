@@ -5,7 +5,7 @@ FUNCTION NAME:  s_fgets
       LIBRARY:  SIO.LIB
   DESCRIPTION:  Inputs a NUL-terminated string of numc bytes into
                 buffer.
-      RETURNS:  int: number of bytes in buffer (0 if timeout occured).
+      RETURNS:  int: number of bytes in buffer (0 if timeout occurred).
      COMMENTS:  Buffer must be numc+1 bytes long to accommodate the NUL
                 terminator.  Timeout mode is forced for the duration of the
                 function.
@@ -44,4 +44,3 @@ int s_fgets(SIO *siop, char *buff, int numc)
      *buff = NUL;                            /* terminate buffer with NUL    */
      return count;
 }
-

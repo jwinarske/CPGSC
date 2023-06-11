@@ -29,4 +29,3 @@ short m_cmd_str(SIO *siop, char* cmdstr, char* replybuff, USHORT numc)
      numc = m_getstr(siop, replybuff, numc); /* get response         */
      return numc;
 }
-

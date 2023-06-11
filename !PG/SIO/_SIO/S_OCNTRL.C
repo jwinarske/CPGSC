@@ -67,4 +67,3 @@ int s_ocntrl(SIO *siop, short mode, short  whichone, USHORT newval)
                }
      return retval;
 }
-

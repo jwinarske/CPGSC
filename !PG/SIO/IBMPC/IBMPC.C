@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 #include <conio.h>
-#include <dos.h>           /*//*/
+#include <dos.h>
 
 
 #include <sio\siodef.h>
@@ -288,4 +288,3 @@ void __sysintroff(SIO *siop, RANK portnum)
 }
 
 #pragma check_stack+    /* turn stack checking back on */
-

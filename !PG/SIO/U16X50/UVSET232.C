@@ -15,4 +15,3 @@ void _vset232(register SIO *siop, struct vout232_ *p232, REG binval)
 {
      (*siop->writebyte)(siop->uart_base + p232->offset, (FAST) binval);
 }
-

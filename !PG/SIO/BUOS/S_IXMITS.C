@@ -16,4 +16,3 @@ FAST s_ixmitstat(register SIO *siop)
 {
      return (siop->tx_headp->inuseflag == TX_FREE);
 }
-

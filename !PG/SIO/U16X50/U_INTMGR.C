@@ -37,4 +37,3 @@ void u_intrpt_mgr(SIO * siop, short int_wanted, BOOL state)
      __sys_enable();
 }
 
-

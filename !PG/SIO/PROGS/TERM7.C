@@ -1,4 +1,4 @@
-#define DEBUG_MODEM        /*//*/
+#define DEBUG_MODEM
 /*
 
 PROGRAM NAME:  TERM7
@@ -6,7 +6,7 @@ PROGRAM NAME:  TERM7
     COMMENTS: New Features:  XMODEM file transfers
 
 */
-#include <malloc.h> /*//*/
+#include <malloc.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -20,7 +20,7 @@ PROGRAM NAME:  TERM7
 #include <sio\term.h>
 #include <sio\xmod.h>
 #include <sio\modem.h>
-#include <sio\level0.h>        /*//*/
+#include <sio\level0.h>
 
 #define MENU         CTRL_A             /* Command summary                */
 #define FORMAT       'A'                /* Setup serial parmeters         */
@@ -55,12 +55,12 @@ void baseline_cfg(SIO* siop)
      short errcode;
      smp = siop->sm;
      s_ipush(siop);                     /* save both control structures      */
-#ifdef DEBUG_MODEM       /*//*/
-     siop->sm->cmdechoflag = TRUE;        /*//*/
-     s_icntrl(siop, SET, CONSFLAG, ON);  /* console echo on */   /*//*/
-#else /*//*/
+#ifdef DEBUG_MODEM
+     siop->sm->cmdechoflag = TRUE;
+     s_icntrl(siop, SET, CONSFLAG, ON);  /* console echo on */
+#else
      s_icntrl(siop, SET, CONSFLAG, OFF);  /* console echo off  */
-#endif      /*//*/
+#endif
      putchar('\n');
      if ( ( errcode = m_reset(siop)) != M_SUCCEED)
           printf("%s.  (%d)\n",m_codes[errcode], errcode);
@@ -82,12 +82,12 @@ void proto_cfg(SIO* siop)
      short errcode;
      struct modem *smp = siop->sm;
      s_ipush(siop);
-#ifdef DEBUG_MODEM                        /*//*/
-     siop->sm->cmdechoflag = TRUE;        /*//*/
-     s_icntrl(siop, SET, CONSFLAG, ON);  /* console echo on */ /*//*/
-#else /*//*/
-     s_icntrl(siop, SET, CONSFLAG, OFF);  /* console echo off  */   /*//*/
-#endif     /*//*/
+#ifdef DEBUG_MODEM
+     siop->sm->cmdechoflag = TRUE;
+     s_icntrl(siop, SET, CONSFLAG, ON);  /* console echo on */
+#else
+     s_icntrl(siop, SET, CONSFLAG, OFF);  /* console echo off  */
+#endif
      s_ipop(siop);
      putchar('\n');
      if ( (errcode = m_protoconfig(siop)) != M_SUCCEED)
@@ -135,7 +135,7 @@ SIO *siop;
           switch (c)
                {
                case EXIT:             /* all done */
-					retval = 1; break;     /*//*/
+					retval = 1; break;
                     if (m_warndcd(siop, OFF) == 0)
                         {
                         m_hup(siop);   /* hang up */
@@ -194,10 +194,10 @@ SIO *siop;
                     break;
                case HUP:
 
-#ifdef DEBUG_MODEM                                      /*//*/
-                    s_icntrl(siop, SET, CONSFLAG, ON);  /*//*/
-                    s_ocntrl(siop, SET, CONSFLAG, ON);  /*//*/
-#endif                                                  /*//*/
+#ifdef DEBUG_MODEM
+                    s_icntrl(siop, SET, CONSFLAG, ON);
+                    s_ocntrl(siop, SET, CONSFLAG, ON);
+#endif
                     puts("\nHanging up...");
                     if (m_warndcd(siop, ON) == 0)
                          printf("\nHangup %s.\n",\
@@ -250,7 +250,7 @@ SIO *siop;
                                   siop->tx_buffsize);
               { // curly braces just to declar flow array
               char *flow[3] = {"NONE", "XON/XOFF", "RTS/CTS"};
-              int i; /*//*/
+              int i;
               printf("\nFlow Control is %s:\n", flow[siop->flow_wanted]);
               }
                     haktc();
@@ -308,7 +308,7 @@ main(argc, argv)
 int argc;
 char *argv[];
 {
-//     long beginmem; /*//*/
+//     long beginmem;
      short portnum;
      SIO *siop;                  /* pointer to an SIO            */
 //     beginmem = _memavl();
@@ -331,4 +331,3 @@ char *argv[];
 //     printf("Memory consumed = %lu\n",beginmem - _memavl());
      return 0;
 }
-

@@ -20,4 +20,3 @@ void crcrevupdate(USHORT data, USHORT *accum, USHORT *crcrevtab)
      comb_val   = *accum ^ data;
      *accum = (*accum >> 8) ^ crcrevtab[comb_val & 0x00ff];
 }
-

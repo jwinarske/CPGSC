@@ -31,4 +31,3 @@ void isr_serr(register SIO* siop)
 //     siop->serr.bitmap.frame   = (err_reg >> 3) &1;
 //     siop->serr.bitmap.Break   = (err_reg >> 4) &1;   /* bit 4 */
 }
-

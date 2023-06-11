@@ -56,4 +56,3 @@ TERM7.EXE: TERM7.OBJ                \
            $(SIO_BASE)\U16x50\u16x50.lib \
            $(SIO_BASE)\_SIO\sio.lib
               link @term7.rsp
-

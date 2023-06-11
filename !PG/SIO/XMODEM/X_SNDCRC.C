@@ -27,4 +27,3 @@ USHORT x_sndcrc(BYTE *buff)
           crcupdate(*buff, &accum, crctblp);          /* macro in CRC.H is better */
      return ( (accum >> 8) +  (accum << 8) );    /* non-portable:  see text  */
 }
-

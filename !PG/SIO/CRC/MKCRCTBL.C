@@ -26,4 +26,3 @@ USHORT *mk_crctbl( USHORT poly, USHORT (*crcfn)(USHORT, USHORT, USHORT) )
           crctp[i] = (*crcfn)(i, poly, 0);  /* ... 0 -255                     */
      return crctp;                    /* return a table to the pointer     */
 }
-

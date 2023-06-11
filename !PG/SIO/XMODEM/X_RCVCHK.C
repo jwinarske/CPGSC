@@ -25,4 +25,3 @@ USHORT x_rcvcksum(USHORT *data)
      printf("CHECKSUM = %d",cksum);
      return (cksum & 0x00FF);
 }
-

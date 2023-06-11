@@ -24,4 +24,3 @@ short setformat(SIO *siop, RANK whichone, RANK newval)
           }
      return retval;
 }
-

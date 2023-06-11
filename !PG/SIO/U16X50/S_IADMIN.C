@@ -33,4 +33,3 @@ void s_iadmin(SIO *siop)
           (*siop->isr[index])(siop);         /* call the correct handler     */
           }
 }
-

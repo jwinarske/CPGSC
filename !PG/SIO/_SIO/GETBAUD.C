@@ -17,4 +17,3 @@ short getbaud(SIO *siop)
           return (siop->br->now);
      return -1;
 }
-

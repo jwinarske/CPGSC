@@ -94,4 +94,3 @@ $(OBJ_PATH)\CRC.OBJ:   $(SRC_PATH)\CRC.C \
 
 CRC.EXE:  $(LIBNAME)
           link $(OBJ_PATH)\crc,crc,,$(LIBNAME);
-

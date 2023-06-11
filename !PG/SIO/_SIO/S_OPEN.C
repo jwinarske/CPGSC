@@ -7,7 +7,7 @@ FUNCTION NAME:  s_open
       RETURNS:  SIO*
 */
 
-#include <stdio.h>            /*//*/
+#include <stdio.h>
 #include <malloc.h>
 #include <sio\siodef.h>
 #include <sio\buos.h>
@@ -128,4 +128,3 @@ SIO *s_open(USHORT portnum)
      __siolist[portnum].sio_openflag = OPEN;     /* mark SIO open in list */
      return siop;
 }
-

@@ -149,4 +149,3 @@ int s_fgetc(SIO *siop)
           putchar(c);
      return (rxflag ? c : IGNORE);
 }
-

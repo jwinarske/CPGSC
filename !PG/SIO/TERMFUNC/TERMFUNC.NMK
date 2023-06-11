@@ -98,4 +98,3 @@ $(OBJ_PATH)\UPLOAD.OBJ:   $(SRC_PATH)\UPLOAD.C \
      $(SIO_INC_PATH)\buos.h
                 $(compile)
                 $(NLIB)
-

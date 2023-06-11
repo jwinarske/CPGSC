@@ -23,7 +23,7 @@ I make improvements to the code more or less continually, so you'll
 quickly discover minor undocumented discrepancies between the book's
 code and the code on this disk.  You'll also discover that I've left
 in place many of my debugging aids that were removed for publication.
-Lines containing the odd-looking comment "/*//*/" or lines beginning
+Lines containing the odd-looking comment "" or lines beginning
 with "//" identify debugging lines. 
 
 Now, here's how you use this disk:
@@ -164,4 +164,3 @@ SIO_INC_PATH  This is the subdirectory for this project's includes.
 
 17. Read the file NEWSIO.DOC in the IBMPC directory for instructions
     on how to automate changes to the COMxSIO.C files.
-

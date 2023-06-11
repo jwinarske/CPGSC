@@ -7,13 +7,13 @@ FUNCTION NAME:  s_close
       RETURNS:  SIO*
 */
 
-#include <stdio.h>            /*//*/
+#include <stdio.h>
 #include <stdlib.h>
 #include <sio\siodef.h>
 #include <sio\buos.h>
 #include <sio\uart.h>
 #include <sio\level0.h>
-#include <malloc.h> /*//*/
+#include <malloc.h>
 
 int s_close(SIO *siop)
 {
@@ -35,7 +35,7 @@ int s_close(SIO *siop)
      /* Enable interrupts to them that wants it */
      if ( __siolist[siop->devnum].intrpt_supp == TRUE)
         {
-//        printf("Memory avail = %u\n", _memavl());    /*//*/
+//        printf("Memory avail = %u\n", _memavl());
         if (siop->intrpt_status.rs232_on == TRUE)
              siop->intrpt_status.rs232_on   = rs232_ioff(siop);
 
@@ -47,7 +47,7 @@ int s_close(SIO *siop)
 
         if (siop->intrpt_status.tx_on == TRUE)
              siop->intrpt_status.tx_on      = tx_ioff(siop, WAIT_TIL_FINISH);
-//        printf("Memory avail = %u\n", _memavl());  /*//*/
+//        printf("Memory avail = %u\n", _memavl());
         }
      __sysintroff(siop, siop->devnum);  /* shut down SIO interrupt system */
      s_restore(siop);                /* restore uart as found */
@@ -55,4 +55,3 @@ int s_close(SIO *siop)
      return 0;
 }
 
-

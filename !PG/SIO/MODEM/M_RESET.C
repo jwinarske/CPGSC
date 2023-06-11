@@ -28,7 +28,7 @@ int m_reset(SIO *siop)
      struct modem *smp = siop->sm;
      int  i, j, errcode, user_redo;
      int  tmptries, tmptime;           /* temporary storage                 */
-     puts("Entering M_RESET");         /*//*/
+     puts("Entering M_RESET");
      s_clrsio(siop, CMDBUFSIZ);        /* clear SIO of garbage              */
      tmptime  = smp->cmdt_out;         /* save command response time out    */
      set232(siop, DTR, OFF);           /* inhibit DTR to force comatose mode*/
@@ -85,7 +85,6 @@ EXIT:
      set232(siop, DTR, OFF);
      smp->cmdt_out = tmptime;          /* restore from temporaries          */
      smp->cmdretry = tmptries;
-     printf("Exiting M_RESET with return code of %d\n", errcode); /*//*/
+     printf("Exiting M_RESET with return code of %d\n", errcode);
      return errcode;
 }
-

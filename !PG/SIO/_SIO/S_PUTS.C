@@ -19,4 +19,3 @@ void s_puts(SIO *siop, char *str)
      while (*str != '\0')
           s_putc(siop, *str++);
 }
-

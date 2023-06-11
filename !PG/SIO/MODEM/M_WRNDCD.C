@@ -44,4 +44,3 @@ short m_warndcd(SIO *siop, BOOL warnmode)
           }
      return M_SUCCEED;
 }
-

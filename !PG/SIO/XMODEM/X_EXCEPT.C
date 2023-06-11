@@ -152,4 +152,3 @@ USHORT x_except(SIO *siop, USHORT exceptnum, USHORT *ex_cntp, USHORT maxexcept)
           }
      return errval;
 }
-

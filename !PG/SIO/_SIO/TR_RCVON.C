@@ -29,4 +29,3 @@ int setuart(SIO *siop, RANK whichone, USHORT state)
           }
      return vsetbits(siop, tr_rcv, state);
 }
-

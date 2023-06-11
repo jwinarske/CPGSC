@@ -32,4 +32,3 @@ int br_to_bcode(USHORT baudrate)
           }
      return -1;
 }
-

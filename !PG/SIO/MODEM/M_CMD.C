@@ -36,4 +36,3 @@ void m_cmd(SIO *siop, char *cmdstr)
           set232(siop, DTR, OFF);
      s_opop(siop);                                /* restore output struct   */
 }
-

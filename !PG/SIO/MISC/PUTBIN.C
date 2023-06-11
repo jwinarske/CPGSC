@@ -20,4 +20,3 @@ void putbin(USHORT data)
           putchar((data & shifter) ? '1' : '0');
      putchar('\n');
 }
-

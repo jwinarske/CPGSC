@@ -27,4 +27,3 @@ short stat232(SIO *siop, RANK whichone)
           }
      return retval;
 }
-

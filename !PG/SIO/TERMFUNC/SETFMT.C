@@ -61,4 +61,3 @@ void set_params(SIO *siop)
                     } while (errcode !=  0);
           }
 }
-

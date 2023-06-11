@@ -42,4 +42,3 @@ void (*s_revector(SIO *siop, USHORT int_wanted, void (*newisr)(SIO*))) ()
 }
 
 #pragma check_stack+
-

@@ -12,8 +12,8 @@ FUNCTION NAME:  m_wait4dcd
                 the modem's S7 register (set by m_config).
 */
 
-#include <stdio.h>                          /*//*/
-#include <string.h>                         /*//*/
+#include <stdio.h>
+#include <string.h>
 #include <sio\siodef.h>
 #include <sio\sioctl.h>
 #include <sio\modem.h>
@@ -46,8 +46,8 @@ int m_wait4dcd(SIO *siop)
           if (s_keybort(siop))
                retcode = M_USRCAN;          /* canceled call from keyboard           */
           }
-//     printf("\nM_WAIT4DCD: autobrflag = %d Connect = %d\n",   /*//*/
-//           smp->autobrflag, stat232(siop, DCD) );     /*//*/
+//     printf("\nM_WAIT4DCD: autobrflag = %d Connect = %d\n",
+//           smp->autobrflag, stat232(siop, DCD) );
      if (stat232(siop, DCD) == TRUE)
           printf("CONNECT: Carrier: %s Local: %s  LLP: %s  COMP: %s\n",
                 brstr[smp->carrier_baud_code],
@@ -62,8 +62,7 @@ int m_wait4dcd(SIO *siop)
           printf("Changing DTE baud rate to %s\n", brstr[smp->connect_XXXX_code]);
           setbaud(siop, smp->connect_XXXX_code);
           }
-//     printf("\nM_WAIT4DCD: return code = %d\n", retcode);     /*//*/
+//     printf("\nM_WAIT4DCD: return code = %d\n", retcode);
      s_ipop(siop);
      return retcode;
 }
-

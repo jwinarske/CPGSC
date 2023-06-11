@@ -37,4 +37,3 @@ RANK get232(SIO *siop, RANK whichone)
           }
      return retval;
 }
-

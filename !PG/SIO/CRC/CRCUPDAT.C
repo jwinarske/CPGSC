@@ -24,4 +24,3 @@ void crcupdate(USHORT data, USHORT *accum, USHORT *crctab)
      comb_val  = (*accum >> 8) ^ data;
      *accum = (*accum << 8) ^ crctab[comb_val];
 }
-

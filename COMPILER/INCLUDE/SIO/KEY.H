@@ -14,4 +14,3 @@ FAST inkey(void);
 #define NO_KEY    0
 
 #endif /* _KEY_    */
-

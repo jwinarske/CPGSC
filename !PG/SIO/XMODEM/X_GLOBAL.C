@@ -13,4 +13,3 @@ USHORT (*r_errckp)()= NIL;           /* pointer to the error check funct  */
 char   *ckvname = 0;                 /* string indicating CRC or cksum    */
 BYTE   csync= 0;                     /* "NAK" for checksum, 'C' for crc   */
 USHORT *crctblp = NIL;               /* pointer to the CRC lookup table   */
-

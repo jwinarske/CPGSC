@@ -13,7 +13,7 @@ FUNCTION NAME:  _vsetbr
                 register are restored.
 
 */
-//#include <stdio.h>        /*//*/
+//#include <stdio.h>
 #include <sio\siodef.h>
 
 void _vsetbr(register SIO *siop, struct vbaud_ *brp, REG lobaud, REG hibaud)
@@ -24,6 +24,5 @@ void _vsetbr(register SIO *siop, struct vbaud_ *brp, REG lobaud, REG hibaud)
      (*siop->writebyte)(siop->uart_base + brp->offsetlo, (FAST)lobaud);
      (*siop->writebyte)(siop->uart_base + brp->offsethi, (FAST)hibaud);
      (*siop->writebyte)(siop->uart_base + siop->par->offset, (FAST)(tmpfmt & 0x7f));
-//     printf("high: %x     low:   %x\n", (FAST)hibaud, (FAST)lobaud); /*//*/
+//     printf("high: %x     low:   %x\n", (FAST)hibaud, (FAST)lobaud);
 }
-

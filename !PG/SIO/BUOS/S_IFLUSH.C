@@ -13,4 +13,3 @@ int s_iflush(SIO *siop)
 {
      return ((siop->s_ictl->rbakflag) ? siop->s_ictl->rbakc : -1);
 }
-

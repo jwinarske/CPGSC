@@ -474,4 +474,3 @@ SIO COM4sio  =
      &baselineD,                   /*72 Modem control strucutre              */
      };
 
-

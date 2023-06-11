@@ -27,4 +27,4 @@ int redial(SIO *siop)
 {
      printf("\nRedialing previous number:  %s\n",siop->sm->dialbuff);
      return (m_redial(siop));
-}
+}

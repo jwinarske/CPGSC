@@ -42,4 +42,3 @@ short serial_status(SIO *siop, RANK whichone)
           }
      return errtmp;
 }
-

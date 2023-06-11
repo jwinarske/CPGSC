@@ -41,4 +41,3 @@ void upload(SIO *siop)
      getkbch();
      puts("Exit upload.");
 }
-

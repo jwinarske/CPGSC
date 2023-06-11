@@ -55,4 +55,3 @@ int s_icntrl(SIO *siop, short function, short member, unsigned newval)
                }
      return retval;
 }
-

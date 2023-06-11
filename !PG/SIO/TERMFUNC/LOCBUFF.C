@@ -82,4 +82,3 @@ int locbuff(SIO *siop, FILE *rcvfp)
      s_ipop(siop);
      return error;
 }
-

@@ -21,4 +21,3 @@ int s_clrsio(SIO *siop, USHORT numbytes)
                return TIMEOUT;
      return 0;
 }
-

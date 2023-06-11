@@ -474,4 +474,3 @@ SIO COM3sio  =
      &baselineC,                   /*72 Modem control strucutre              */
      };
 
-

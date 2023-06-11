@@ -76,4 +76,3 @@ void setup232(SIO *siop)
                }
           }
 }
-

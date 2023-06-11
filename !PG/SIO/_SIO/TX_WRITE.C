@@ -20,4 +20,3 @@ short tx_write(SIO *siop, BYTE *newbuff, short count)
           }
      return 0;
 }
-
